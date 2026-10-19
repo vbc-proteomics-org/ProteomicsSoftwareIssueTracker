@@ -69,8 +69,6 @@ CONTRIBUTING.md      how to add an issue and its material
   labels.json        all labels, as code
 scripts/
   sync-labels.ps1    pushes labels.json to GitHub
-skills/
-  proteomics-issue-tracker/  agent skill; reads the rules from this repo at run time
 <software>/
   README.md          vendor, how to reach them, index of this software's issues
   issue-<n>-<slug>/  reproduction material for issue #<n> (optional)
