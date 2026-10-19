@@ -33,8 +33,13 @@ user the skill is out of date.
 ## 2. Check before writing
 
 - Is it in scope per `CONTRIBUTING.md`? If not, say so and stop.
-- Already known? `gh issue list --repo <repo> --state all --search "<keywords>"` and the software's
-  label. If a match exists, propose a comment on it rather than a new issue.
+- Already known here? `gh issue list --repo <repo> --state all --search "<keywords>"` and the
+  software's label. If a match exists, propose a comment on it rather than a new issue.
+- Already known to the vendor? If the software's README names an upstream tracker, search it as
+  `CONTRIBUTING.md` describes, with several phrasings (symptom, error text, affected feature):
+  for GitHub, `gh search issues --repo <owner>/<repo> --include-prs=false "<terms>"` (it covers open
+  and closed) and, if the repo has discussions, its discussions; elsewhere, the tracker's own search via
+  WebFetch. Show the user the candidates and let them judge a match — do not decide silently.
 - Missing facts the form requires (exact versions, steps, expected vs. actual)? Ask the user; never
   invent a version, a result or a vendor reply.
 
@@ -66,9 +71,26 @@ Then post, in the order `CONTRIBUTING.md` gives (issue first, its number names t
 
 ## 5. Vendor contact
 
-Draft the upstream report (vendor tracker issue or email text) with the issue link and, for files,
-permanent commit links. **Never send email.** Posting to a vendor's public tracker is an outward action:
-same confirmation rule as above. Afterwards update the vendor status as `CONTRIBUTING.md` describes.
+What to do upstream (link a match, comment on it, file new, link back or not) is decided by
+`CONTRIBUTING.md`; this section is only how.
+
+1. **Read the vendor's rules fresh**, never from memory or from the software README alone — the README
+   says where they are, the vendor's copy is what counts: for GitHub, its issue forms/templates
+   (`.github/ISSUE_TEMPLATE/`, also the org's `.github` repo), `CONTRIBUTING.md`, `SECURITY.md`,
+   `SUPPORT.md`, pinned issues, and the README's reporting section; elsewhere, the support or
+   reporting page. If the README's record of the rules is stale or wrong, propose correcting it.
+2. **Security problems** go only through the vendor's private channel. Do not draft a public issue for
+   one anywhere, and tell the user why.
+3. **Draft the upstream post in the vendor's format**: their template's fields and order, every
+   piece of information they require, their tone. Self-contained; the link to our issue only where
+   their rules allow. Next to the draft, list each vendor rule and how the draft meets it — a rule the
+   draft cannot meet (e.g. a log we do not have) is reported, not skipped.
+4. **Email or portal:** draft the text only. **Never send email.**
+5. **Posting** to a vendor tracker (issue, comment, link-back) is an outward action under the
+   confirmation rule of section 4, in the vendor's space, read by the vendor: always show the exact
+   text and target URL first.
+6. Afterwards, update our issue (*Vendor status*, upstream link, search record, `vendor: …` label)
+   and `SUMMARY.md` as `CONTRIBUTING.md` describes — same confirmation rule.
 
 ## 6. Report
 

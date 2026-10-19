@@ -5,6 +5,7 @@
 | Vendor | Biognosys |
 | Contact for bug reports | <public tracker URL, support portal, or email address> |
 | Upstream tracker | <URL, or "none - email only"> |
+| Vendor's reporting rules | <links: issue templates, CONTRIBUTING, support guidelines, security policy; or "none stated"> |
 | Issues here | [open](../../../issues?q=is%3Aissue+is%3Aopen+label%3A%22software%3A+Spectronaut%22) · [all](../../../issues?q=is%3Aissue+label%3A%22software%3A+Spectronaut%22) |
 
 Contact details: not yet verified - fill in before the first report.

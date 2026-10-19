@@ -8,6 +8,7 @@ Issue: <link to the GitHub issue>
 | Affected versions | <exact versions tested and affected> |
 | Not affected | <exact versions tested and not affected, if any> |
 | Input | <public dataset accession, or "synthetic, in this folder"> |
+| Third-party material | <source and license of anything not written by us, or "none"> |
 
 ## Files
 

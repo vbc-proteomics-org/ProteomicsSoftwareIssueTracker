@@ -60,6 +60,8 @@ Affected and fixed **versions** are in the issue body, never in labels.
 
 ```
 README.md            this file: what, why, index per software
+LICENSE              CC BY 4.0 - text, documentation, data
+LICENSE-CODE         MIT - scripts and reproduction code
 SUMMARY.md           every issue in one table
 CONTRIBUTING.md      how to add an issue and its material
 .github/
@@ -79,3 +81,8 @@ _template/           copy this to start a new software folder or issue folder
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Reports from outside the VBC are welcome as issues; please use
 the issue form.
+
+## License
+
+Text, documentation and data: [CC BY 4.0](LICENSE). Code (scripts, reproduction code): [MIT](LICENSE-CODE).
+Third-party material in issue folders keeps its own license, stated in that folder's README.
