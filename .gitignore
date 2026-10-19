@@ -1,0 +1,24 @@
+# Raw and vendor files must not be committed here; see CONTRIBUTING.md.
+*.raw
+*.wiff
+*.wiff2
+*.wiff.scan
+*.d/
+*.sne
+*.kot
+*.msf
+*.pdResult
+*.pdResultView
+*.lic
+
+# Editors and OS
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/

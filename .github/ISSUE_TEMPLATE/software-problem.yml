@@ -1,0 +1,81 @@
+name: Software problem
+description: A problem in third-party proteomics software (not VBC-internal software)
+labels: ["vendor: not contacted", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository is **public** and the vendor will read it. No customer data, no NDA or
+        support-ticket content, no license files. State facts; see CONTRIBUTING.md.
+  - type: input
+    id: software
+    attributes:
+      label: Software
+      placeholder: Spectronaut
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Affected versions
+      description: Exact versions you observed it on. Add versions you checked that are NOT affected.
+      placeholder: "19.1.240806 affected; 18.7.240325 not affected"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, relevant settings, instrument / data type if it matters.
+      placeholder: "Windows Server 2022; timsTOF diaPASEF; directDIA"
+  - type: textarea
+    id: summary
+    attributes:
+      label: What goes wrong
+      description: One or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps, with public or synthetic input. Link the folder in this repo if there is one.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual
+    validations:
+      required: true
+  - type: dropdown
+    id: silent
+    attributes:
+      label: Does it change results without an error or warning?
+      options:
+        - "No - it fails visibly (error, crash, refusal)"
+        - "Yes - results change silently"
+        - "Unknown"
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: If you have one.
+  - type: textarea
+    id: vendor
+    attributes:
+      label: Vendor status
+      description: Filled in by maintainers - channel, date reported, upstream link, replies, fixed version.
+      value: |
+        - Reported: not yet
+        - Channel:
+        - Upstream link:
+        - Fixed in:

@@ -1,0 +1,25 @@
+[
+  { "name": "software: Spectronaut",          "color": "1d76db", "description": "Biognosys Spectronaut" },
+  { "name": "software: DIA-NN",               "color": "1d76db", "description": "DIA-NN" },
+  { "name": "software: Proteome Discoverer",  "color": "1d76db", "description": "Thermo Fisher Proteome Discoverer" },
+
+  { "name": "type: bug",                      "color": "d73a4a", "description": "Wrong behaviour or wrong output" },
+  { "name": "type: compatibility",            "color": "e99695", "description": "Fails with a particular OS, instrument, file format or other software" },
+  { "name": "type: performance",              "color": "f9d0c4", "description": "Unusable run time or memory use" },
+  { "name": "type: documentation",            "color": "fef2c0", "description": "Documentation is wrong or misleading about behaviour" },
+
+  { "name": "severity: critical",             "color": "b60205", "description": "Wrong results or data loss in common use" },
+  { "name": "severity: major",                "color": "d93f0b", "description": "Blocks a workflow or wrong results in specific use" },
+  { "name": "severity: minor",                "color": "fbca04", "description": "Workaround is easy" },
+
+  { "name": "impact: silent result change",   "color": "5319e7", "description": "Results change without an error or warning" },
+
+  { "name": "vendor: not contacted",          "color": "ededed", "description": "Not yet sent to the vendor" },
+  { "name": "vendor: reported",               "color": "c5def5", "description": "Sent to the vendor, no reply yet" },
+  { "name": "vendor: acknowledged",           "color": "bfd4f2", "description": "Vendor confirmed the problem" },
+  { "name": "vendor: fixed",                  "color": "0e8a16", "description": "Vendor shipped a fix; version in the issue body" },
+  { "name": "vendor: won't fix",              "color": "000000", "description": "Vendor considers it intended or out of scope" },
+
+  { "name": "needs triage",                   "color": "ffffff", "description": "New report, labels not yet checked by a maintainer" },
+  { "name": "needs repro",                    "color": "ffffff", "description": "Not yet reproduced with shareable input" }
+]
