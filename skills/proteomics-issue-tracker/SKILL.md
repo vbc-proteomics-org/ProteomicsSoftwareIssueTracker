@@ -14,7 +14,7 @@ repository's files, the repository wins.
 ## 1. Get the current rules
 
 1. Local clone: `$PROTEOMICS_ISSUE_TRACKER_LOCAL`, else
-   `C:/Users/juraj.ahel/source/repos/ProteomicsSoftwareIssueTracker`. If it does not exist, clone it there
+   `~/source/repos/ProteomicsSoftwareIssueTracker`; ask if the user keeps repositories elsewhere. If it does not exist, clone it there
    (`gh repo clone vbc-proteomics-org/ProteomicsSoftwareIssueTracker <path>`).
 2. `git fetch`, then check state. Clean and behind: `git pull --ff-only`. Local changes, diverged, or on
    another branch than the default: **stop and ask** — do not stash, reset or rebase.
@@ -67,7 +67,7 @@ Skip the confirmation only if the user explicitly said so for this request in th
 not later ones, and never covers anything the public-content check flagged — those are always shown.
 
 Then post, in the order `CONTRIBUTING.md` gives (issue first, its number names the folder). Use
-`--body-file` with a temp file under `C:/temp/claude/<task>/`, not inline bodies.
+`--body-file` with a temp file in the session's temp or scratch directory, not inline bodies.
 
 ## 5. Vendor contact
 
