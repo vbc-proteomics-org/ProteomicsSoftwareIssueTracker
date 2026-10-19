@@ -48,6 +48,19 @@ This repository is public. Before opening an issue or pushing material:
 7. **Do not delete material after a fix.** It documents which versions were affected and can serve as
    a regression check for later versions.
 
+## Direct to `main` or via pull request
+
+Bookkeeping is committed directly to `main`:
+
+- `SUMMARY.md` rows,
+- a software README's issue table and contact details.
+
+Everything else goes through a pull request that references the issue:
+
+- an issue's material folder (scripts, inputs, results),
+- a new software folder,
+- changes to the rules: this file, the issue form, `labels.json`.
+
 ## Vendors with their own tracker
 
 When a vendor runs a public tracker (GitHub issues, discussions, a forum, a public bug database), that
@@ -101,5 +114,5 @@ folder's README, and commit it only if that license allows redistribution.
 
 ## Keeping SUMMARY.md current
 
-[SUMMARY.md](SUMMARY.md) is maintained by hand: add a row when you open an issue, update it when the
-vendor status changes. The GitHub issue is authoritative where the two disagree.
+[SUMMARY.md](SUMMARY.md) is maintained by hand, committed directly to `main`: add a row when you open an
+issue, update it when the vendor status changes. The GitHub issue is authoritative where the two disagree.
