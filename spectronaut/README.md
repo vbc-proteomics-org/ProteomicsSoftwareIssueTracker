@@ -15,3 +15,4 @@ known-issues list; release notes at https://biognosys.com/resources/spectronaut2
 
 | # | Folder | Problem |
 |---|---|---|
+| [#1](../../../issues/1) | [issue-1-localization-mass-error](issue-1-localization-mass-error/) | PTM localization: moving a site-determining fragment off its theoretical m/z raises the probability of its site |
