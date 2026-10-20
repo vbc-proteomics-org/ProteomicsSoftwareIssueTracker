@@ -4,8 +4,10 @@
 
 A problem belongs here when all three hold:
 
-1. It is in **software we do not write** — a vendor's or another group's tool. Problems in VBC-internal
-   software go to that software's own repository.
+1. It is in **software we do not write** — a vendor's or another group's tool — or in **software we
+   write that is publicly available** (published, released or distributed to other labs), decided case
+   by case. Software we write and use only internally does not belong here; its problems go to that
+   software's own repository.
 2. It is **relevant to running proteomics analyses**: it changes results, blocks a workflow, or costs
    real time to diagnose.
 3. It is **worth someone else knowing about** — another lab could plausibly hit it.

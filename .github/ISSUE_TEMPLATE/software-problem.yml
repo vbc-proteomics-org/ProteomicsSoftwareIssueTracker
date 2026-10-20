@@ -1,5 +1,5 @@
 name: Software problem
-description: A problem in third-party proteomics software (not VBC-internal software)
+description: A problem in third-party or publicly available proteomics software (not internal-only VBC software)
 labels: ["vendor: not contacted", "needs triage"]
 body:
   - type: markdown
