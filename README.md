@@ -31,6 +31,7 @@ change results without warning carry the label `impact: silent result change`.
 | Spectronaut | Biognosys | [open](../../issues?q=is%3Aissue+is%3Aopen+label%3A%22software%3A+Spectronaut%22) · [all](../../issues?q=is%3Aissue+label%3A%22software%3A+Spectronaut%22) | [spectronaut/](spectronaut/) |
 | DIA-NN | Vadim Demichev | [open](../../issues?q=is%3Aissue+is%3Aopen+label%3A%22software%3A+DIA-NN%22) · [all](../../issues?q=is%3Aissue+label%3A%22software%3A+DIA-NN%22) | [dia-nn/](dia-nn/) |
 | Proteome Discoverer | Thermo Fisher Scientific | [open](../../issues?q=is%3Aissue+is%3Aopen+label%3A%22software%3A+Proteome+Discoverer%22) · [all](../../issues?q=is%3Aissue+label%3A%22software%3A+Proteome+Discoverer%22) | [proteome-discoverer/](proteome-discoverer/) |
+| apQuant | VBC proteomics facilities | [open](../../issues?q=is%3Aissue+is%3Aopen+label%3A%22software%3A+apQuant%22) · [all](../../issues?q=is%3Aissue+label%3A%22software%3A+apQuant%22) | [apquant/](apquant/) |
 
 [SUMMARY.md](SUMMARY.md) lists every issue across all software in one table.
 
