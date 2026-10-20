@@ -2,6 +2,8 @@
 
 Known problems in **third-party proteomics software** — search engines, DIA/DDA analysis suites,
 instrument and vendor software — found by the VBC proteomics facilities in the course of real work.
+Publicly available software the facilities write themselves can be listed too, case by case (see
+[CONTRIBUTING.md](CONTRIBUTING.md#what-belongs-here)).
 
 > **This is not a vendor's issue tracker.** It is an independent record kept by the
 > [VBC proteomics facilities](https://github.com/vbc-proteomics-org). The vendors listed here do not
