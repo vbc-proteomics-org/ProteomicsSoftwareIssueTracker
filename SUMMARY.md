@@ -11,7 +11,7 @@ Last updated: 2026-10-22.
 | # | Problem | Affected | Fixed in | Vendor | Silent |
 |---|---|---|---|---|---|
 | [#1](../../issues/1) | PTM localization: moving a site-determining fragment off its theoretical m/z raises the probability of its site | 21.1.260825 (20.1.250624 not affected) | – | reported 2026-10-19 | yes |
-| [#12](../../issues/12) | Memory not released after an analysis and closing the experiment; handles grow while idle | 21.1 | – | not contacted | no |
+| [#12](../../issues/12) | Memory not released after an analysis and closing the experiment; handles grow while idle | 21.1 | – | reported | no |
 
 ## DIA-NN
 
