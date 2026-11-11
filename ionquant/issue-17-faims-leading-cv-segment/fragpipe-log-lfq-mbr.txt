@@ -1,0 +1,1588 @@
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+System OS: Linux, Architecture: amd64
+Java Info: 17.0.21.0.3, OpenJDK 64-Bit Server VM, Ubuntu
+.NET Core Info: 6.0.36
+
+
+Version info:
+FragPipe version 24.0
+DIA-Umpire version 2.3.3
+diaTracer version 2.2.1
+MSFragger version 4.4.1
+Crystal-C version 1.5.10
+MSBooster version 1.4.14
+Percolator version 3.7.1
+PTMProphet version 6.3.2
+Metaproteomics version 1.0.1
+Philosopher version 5.1.3-RC9
+PTM-Shepherd version 3.0.11
+IonQuant version 1.11.20
+TMT-Integrator version 6.1.3
+FragPipe-SpecLib version 0.1.58
+DIA-NN version 1.8.2 beta 8
+Skyline version N/A
+Pandas version 2.3.3
+Numpy version 1.26.4
+
+
+LCMS files:
+  Experiment/Group: HeLa_1
+  (if "spectral library generation" is enabled, all files will be analyzed together)
+  - /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.raw	DDA
+  Experiment/Group: HeLa_2
+  (if "spectral library generation" is enabled, all files will be analyzed together)
+  - /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.raw	DDA
+  Experiment/Group: HeLa_3
+  (if "spectral library generation" is enabled, all files will be analyzed together)
+  - /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.raw	DDA
+
+
+42 commands to execute:
+CheckCentroid
+java -Xmx20G -cp /work/rt/lib/fragpipe-24.0.jar:/work/rt/tools/batmass-io-1.36.5.jar org.nesvilab.fragpipe.util.CheckCentroid /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.raw 4
+WorkspaceCleanInit [Work dir: /work/results]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+WorkspaceCleanInit [Work dir: /work/results]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --init --nocheck --temp /tmp/ff740832-d950-413d-a037-3aba2b4699ee
+WorkspaceCleanInit [Work dir: /work/results/HeLa_2]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+WorkspaceCleanInit [Work dir: /work/results/HeLa_2]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --init --nocheck --temp /tmp/4edb6d66-3485-468c-a871-3c173678392a
+WorkspaceCleanInit [Work dir: /work/results/HeLa_3]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+WorkspaceCleanInit [Work dir: /work/results/HeLa_3]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --init --nocheck --temp /tmp/89a2eca0-ac02-422f-ae12-7bdd9fe2344b
+WorkspaceCleanInit [Work dir: /work/results/HeLa_1]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+WorkspaceCleanInit [Work dir: /work/results/HeLa_1]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --init --nocheck --temp /tmp/4ad15ad7-540f-485e-867d-1675d8d50ebc
+MSFragger [Work dir: /work/results]
+java -jar -Dfile.encoding=UTF-8 -Xmx20G /opt/fragpipe/tools/MSFragger-4.4.1/MSFragger-4.4.1.jar /work/results/fragger.params /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.raw /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.raw /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.raw
+MSFragger move pepxml
+java -cp /work/rt/lib/fragpipe-24.0.jar:/opt/fragpipe/lib/batmass-io-1.36.5.jar org.nesvilab.utils.FileMove --no-err /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pepXML /work/results/HeLa_1/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pepXML
+MSFragger move pin
+java -cp /work/rt/lib/fragpipe-24.0.jar:/opt/fragpipe/lib/batmass-io-1.36.5.jar org.nesvilab.utils.FileMove --no-err /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pin /work/results/HeLa_1/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pin
+MSFragger move pepxml
+java -cp /work/rt/lib/fragpipe-24.0.jar:/opt/fragpipe/lib/batmass-io-1.36.5.jar org.nesvilab.utils.FileMove --no-err /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pepXML /work/results/HeLa_2/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pepXML
+MSFragger move pin
+java -cp /work/rt/lib/fragpipe-24.0.jar:/opt/fragpipe/lib/batmass-io-1.36.5.jar org.nesvilab.utils.FileMove --no-err /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pin /work/results/HeLa_2/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pin
+MSFragger move pepxml
+java -cp /work/rt/lib/fragpipe-24.0.jar:/opt/fragpipe/lib/batmass-io-1.36.5.jar org.nesvilab.utils.FileMove --no-err /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pepXML /work/results/HeLa_3/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pepXML
+MSFragger move pin
+java -cp /work/rt/lib/fragpipe-24.0.jar:/opt/fragpipe/lib/batmass-io-1.36.5.jar org.nesvilab.utils.FileMove --no-err /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pin /work/results/HeLa_3/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pin
+MSBooster [Work dir: /work/results]
+java -Djava.awt.headless=true -Xmx20G -cp /work/rt/tools/MSBooster-1.4.14.jar:/work/rt/tools/batmass-io-1.36.5.jar mainsteps.MainClass --paramsList /work/results/msbooster_params.txt
+Percolator [Work dir: /work/results/HeLa_1]
+/work/rt/tools/percolator_3_7_1/linux/percolator --only-psms --no-terminate --post-processing-tdc --num-threads 4 --results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_target_psms.tsv --decoy-results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_edited.pin
+Percolator [Work dir: /work/results/HeLa_2]
+/work/rt/tools/percolator_3_7_1/linux/percolator --only-psms --no-terminate --post-processing-tdc --num-threads 4 --results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_target_psms.tsv --decoy-results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_edited.pin
+Percolator [Work dir: /work/results/HeLa_3]
+/work/rt/tools/percolator_3_7_1/linux/percolator --only-psms --no-terminate --post-processing-tdc --num-threads 4 --results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_target_psms.tsv --decoy-results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_edited.pin
+Percolator: Convert to pepxml [Work dir: /work/results/HeLa_1]
+java -cp /work/rt/lib/* org.nesvilab.fragpipe.tools.percolator.PercolatorOutputToPepXML 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pin 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_target_psms.tsv 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_decoy_psms.tsv interact-20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1 DDA 0.5 /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_uncalibrated.mzML
+Percolator delete temp
+java -cp /work/rt/lib/fragpipe-24.0.jar org.nesvilab.utils.FileDelete /work/results/HeLa_1/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_target_psms.tsv
+Percolator delete temp
+java -cp /work/rt/lib/fragpipe-24.0.jar org.nesvilab.utils.FileDelete /work/results/HeLa_1/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_decoy_psms.tsv
+Percolator: Convert to pepxml [Work dir: /work/results/HeLa_2]
+java -cp /work/rt/lib/* org.nesvilab.fragpipe.tools.percolator.PercolatorOutputToPepXML 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pin 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_target_psms.tsv 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_decoy_psms.tsv interact-20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2 DDA 0.5 /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_uncalibrated.mzML
+Percolator delete temp
+java -cp /work/rt/lib/fragpipe-24.0.jar org.nesvilab.utils.FileDelete /work/results/HeLa_2/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_target_psms.tsv
+Percolator delete temp
+java -cp /work/rt/lib/fragpipe-24.0.jar org.nesvilab.utils.FileDelete /work/results/HeLa_2/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_decoy_psms.tsv
+Percolator: Convert to pepxml [Work dir: /work/results/HeLa_3]
+java -cp /work/rt/lib/* org.nesvilab.fragpipe.tools.percolator.PercolatorOutputToPepXML 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pin 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_target_psms.tsv 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_decoy_psms.tsv interact-20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3 DDA 0.5 /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_uncalibrated.mzML
+Percolator delete temp
+java -cp /work/rt/lib/fragpipe-24.0.jar org.nesvilab.utils.FileDelete /work/results/HeLa_3/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_target_psms.tsv
+Percolator delete temp
+java -cp /work/rt/lib/fragpipe-24.0.jar org.nesvilab.utils.FileDelete /work/results/HeLa_3/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_decoy_psms.tsv
+ProteinProphet [Work dir: /work/results]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 proteinprophet --maxppmdiff 2000000 --output combined /work/results/filelist_proteinprophet.txt
+PhilosopherDbAnnotate [Work dir: /work/results/HeLa_1]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 database --annotate /w/db/2026-11-10-decoys-reviewed-contam-UP000005640.fas --prefix rev_
+PhilosopherFilter [Work dir: /work/results/HeLa_1]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 filter --sequential --prot 0.01 --picked --tag rev_ --pepxml /work/results/HeLa_1 --protxml /work/results/combined.prot.xml --razor
+PhilosopherFilter [Work dir: /work/results/HeLa_2]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 filter --sequential --prot 0.01 --picked --tag rev_ --pepxml /work/results/HeLa_2 --dbbin /work/results/HeLa_1 --protxml /work/results/combined.prot.xml --probin /work/results/HeLa_1 --razor
+PhilosopherFilter [Work dir: /work/results/HeLa_3]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 filter --sequential --prot 0.01 --picked --tag rev_ --pepxml /work/results/HeLa_3 --dbbin /work/results/HeLa_1 --protxml /work/results/combined.prot.xml --probin /work/results/HeLa_1 --razor
+PhilosopherReport [Work dir: /work/results/HeLa_2]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 report
+PhilosopherReport [Work dir: /work/results/HeLa_3]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 report
+PhilosopherReport [Work dir: /work/results/HeLa_1]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 report
+WorkspaceClean [Work dir: /work/results]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+WorkspaceClean [Work dir: /work/results/HeLa_2]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+WorkspaceClean [Work dir: /work/results/HeLa_3]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+WorkspaceClean [Work dir: /work/results/HeLa_1]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+IonQuant [Work dir: /work/results]
+java -Djava.awt.headless=true -Xmx20G -Dlibs.bruker.dir=/opt/fragpipe/tools/MSFragger-4.4.1/ext/bruker -Dlibs.thermo.dir=/opt/fragpipe/tools/MSFragger-4.4.1/ext/thermo -cp /work/rt/tools/jfreechart-1.5.3.jar:/opt/fragpipe/tools/IonQuant-1.11.20.jar ionquant.IonQuant --threads 4 --perform-ms1quant 1 --perform-isoquant 0 --isotol 20.0 --isolevel 2 --isotype tmt10 --ionmobility 0 --site-reports 1 --msstats 1 --minexps 1 --mbr 1 --maxlfq 1 --requantify 1 --mztol 10 --imtol 0.05 --rttol 0.4 --mbrmincorr 0 --mbrrttol 1 --mbrimtol 0.05 --mbrtoprun 10 --ionfdr 0.01 --proteinfdr 1 --peptidefdr 1 --normalization 1 --minisotopes 2 --intensitymode 2 --minscans 3 --writeindex 0 --tp 0 --minfreq 0 --minions 1 --locprob 0.75 --uniqueness 0 --multidir . --filelist /work/results/filelist_ionquant.txt --modlist /work/results/modmasses_ionquant.txt
+~~~~~~~~~~~~~~~~~~~~~~
+
+Execution order:
+
+    Cmd: [START], Work dir: [/work/results]
+    Cmd: [CheckCentroid], Work dir: [/work/results]
+    Cmd: [WorkspaceCleanInit], Work dir: [/work/results]
+    Cmd: [WorkspaceCleanInit], Work dir: [/work/results/HeLa_2]
+    Cmd: [WorkspaceCleanInit], Work dir: [/work/results/HeLa_3]
+    Cmd: [WorkspaceCleanInit], Work dir: [/work/results/HeLa_1]
+    Cmd: [MSFragger], Work dir: [/work/results]
+    Cmd: [MSBooster], Work dir: [/work/results]
+    Cmd: [Percolator], Work dir: [/work/results]
+    Cmd: [ProteinProphet], Work dir: [/work/results]
+    Cmd: [PhilosopherDbAnnotate], Work dir: [/work/results]
+    Cmd: [PhilosopherFilter], Work dir: [/work/results]
+    Cmd: [PhilosopherReport], Work dir: [/work/results]
+    Cmd: [WorkspaceClean], Work dir: [/work/results]
+    Cmd: [WorkspaceClean], Work dir: [/work/results/HeLa_2]
+    Cmd: [WorkspaceClean], Work dir: [/work/results/HeLa_3]
+    Cmd: [WorkspaceClean], Work dir: [/work/results/HeLa_1]
+    Cmd: [IonQuant], Work dir: [/work/results]
+
+~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~Sample of /w/db/2026-11-10-decoys-reviewed-contam-UP000005640.fas~~~~~~~
+>rev_sp|A0A024R1R8|TMA7B_HUMAN Translation machinery-associated protein 7B OS=Homo sapiens OX=9606 GN=TMA7B PE=3 SV=1
+>rev_sp|O43760|SNG2_HUMAN Synaptogyrin-2 OS=Homo sapiens OX=9606 GN=SYNGR2 PE=1 SV=1
+>rev_sp|P0DP09|KV113_HUMAN Immunoglobulin kappa variable 1-13 OS=Homo sapiens OX=9606 GN=IGKV1-13 PE=3 SV=1
+>rev_sp|P49802|RGS7_HUMAN Regulator of G protein signaling 7 OS=Homo sapiens OX=9606 GN=RGS7 PE=1 SV=3
+>rev_sp|Q14213|IL27B_HUMAN Interleukin-27 subunit beta OS=Homo sapiens OX=9606 GN=EBI3 PE=1 SV=2
+>rev_sp|Q6AZY7|SCAR3_HUMAN Scavenger receptor class A member 3 OS=Homo sapiens OX=9606 GN=SCARA3 PE=1 SV=1
+>rev_sp|Q8IWY9|CDAN1_HUMAN Codanin-1 OS=Homo sapiens OX=9606 GN=CDAN1 PE=1 SV=4
+>rev_sp|Q8WWF1|CA054_HUMAN Uncharacterized protein C1orf54 OS=Homo sapiens OX=9606 GN=C1orf54 PE=1 SV=1
+>rev_sp|Q9BRY0|S39A3_HUMAN Zinc transporter ZIP3 OS=Homo sapiens OX=9606 GN=SLC39A3 PE=1 SV=2
+>rev_sp|Q9NVH1|DJC11_HUMAN DnaJ homolog subfamily C member 11 OS=Homo sapiens OX=9606 GN=DNAJC11 PE=1 SV=2
+>rev_sp|X6R8D5|CMIP3_HUMAN Ciliary microtubule inner protein 3 OS=Homo sapiens OX=9606 GN=CIMIP3 PE=1 SV=3
+>sp|O43752|STX6_HUMAN Syntaxin-6 OS=Homo sapiens OX=9606 GN=STX6 PE=1 SV=1
+>sp|P0DP07|HV431_HUMAN Immunoglobulin heavy variable 4-31 OS=Homo sapiens OX=9606 GN=IGHV4-31 PE=1 SV=1
+>sp|P49796|RGS3_HUMAN Regulator of G protein signaling 3 OS=Homo sapiens OX=9606 GN=RGS3 PE=1 SV=2
+>sp|Q14209|E2F2_HUMAN Transcription factor E2F2 OS=Homo sapiens OX=9606 GN=E2F2 PE=1 SV=1
+>sp|Q6AWC8|YK026_HUMAN Putative uncharacterized protein LOC100129027 OS=Homo sapiens OX=9606 PE=5 SV=1
+>sp|Q8IWY4|SCUB1_HUMAN Signal peptide, CUB and EGF-like domain-containing protein 1 OS=Homo sapiens OX=9606 GN=SCUBE1 PE=1 SV=3
+>sp|Q8WWB7|GLMP_HUMAN Glycosylated lysosomal membrane protein OS=Homo sapiens OX=9606 GN=GLMP PE=1 SV=1
+>sp|Q9BRX8|PXL2A_HUMAN Peroxiredoxin-like 2A OS=Homo sapiens OX=9606 GN=PRXL2A PE=1 SV=3
+>sp|Q9NVG8|TBC13_HUMAN TBC1 domain family member 13 OS=Homo sapiens OX=9606 GN=TBC1D13 PE=1 SV=3
+>sp|W5XKT8|SACA6_HUMAN Sperm acrosome membrane-associated protein 6 OS=Homo sapiens OX=9606 GN=SPACA6 PE=1 SV=2
+~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~ fragpipe.config ~~~~~~~~~
+# FragPipe v24.0ui state cache
+
+
+# Please edit the following path to point to the correct location.
+# In Windows, please replace single '\' with '\\'
+database.db-path=/w/db/2026-11-10-decoys-reviewed-contam-UP000005640.fas
+
+crystalc.run-crystalc=false
+database.decoy-tag=rev_
+diann.channel-normalization-strategy=0
+diann.cmd-opts=
+diann.gene-level-report=false
+diann.generate-msstats=true
+diann.heavy=
+diann.library=
+diann.light=
+diann.mbr=false
+diann.medium=
+diann.min-site-prob=0.75
+diann.mod-tag=
+diann.modified-peptide-level-report=true
+diann.peptide-level-report=true
+diann.protein-level-report=false
+diann.q-value=0.01
+diann.quantification-strategy=3
+diann.quantification-strategy-2=2
+diann.redo-protein-inference=false
+diann.run-dia-nn=false
+diann.run-dia-plex=false
+diann.run-specific-protein-q-value=false
+diann.site-level-report=false
+diann.unrelated-runs=false
+diatracer.corr-threshold=0.3
+diatracer.delta-apex-im=0.01
+diatracer.delta-apex-rt=3
+diatracer.mass-defect-filter=true
+diatracer.mass-defect-offset=0.1
+diatracer.rf-max=500
+diatracer.run-diatracer=false
+diatracer.write-intermediate-files=false
+diaumpire.AdjustFragIntensity=true
+diaumpire.BoostComplementaryIon=false
+diaumpire.CorrThreshold=0
+diaumpire.DeltaApex=0.2
+diaumpire.ExportPrecursorPeak=false
+diaumpire.Q1=true
+diaumpire.Q2=true
+diaumpire.Q3=true
+diaumpire.RFmax=500
+diaumpire.RPmax=25
+diaumpire.RTOverlap=0.3
+diaumpire.SE.EstimateBG=false
+diaumpire.SE.IsoPattern=0.3
+diaumpire.SE.MS1PPM=10
+diaumpire.SE.MS2PPM=20
+diaumpire.SE.MS2SN=1.1
+diaumpire.SE.MassDefectFilter=true
+diaumpire.SE.MassDefectOffset=0.1
+diaumpire.SE.NoMissedScan=1
+diaumpire.SE.SN=1.1
+diaumpire.run-diaumpire=false
+fpop.coadaptr.fpop.fpop_masses=
+fpop.coadaptr.fpop.run-fpop-coadaptr=false
+fpop.fragpipe.fpop.fpop-tmt=false
+fpop.fragpipe.fpop.label_control=
+fpop.fragpipe.fpop.label_fpop=
+fpop.fragpipe.fpop.region_size=1
+fpop.fragpipe.fpop.run-fpop=false
+fpop.fragpipe.fpop.subtract-control=false
+fragpipe-config.bin-diann=/work/sifsearch/rt/tools/diann/1.8.2_beta_8/linux/diann-1.8.1.8
+fragpipe-config.bin-python=/opt/fragpipe-python/bin/python
+fragpipe-config.tools-folder=/opt/fragpipe/tools
+freequant.mz-tol=10
+freequant.rt-tol=0.4
+freequant.run-freequant=false
+ionquant.excludemods=
+ionquant.formula=
+ionquant.heavy=
+ionquant.imtol=0.05
+ionquant.intensitymode=2
+ionquant.ionfdr=0.01
+ionquant.light=
+ionquant.locprob=0.75
+ionquant.maxlfq=1
+ionquant.mbr=1
+ionquant.mbrimtol=0.05
+ionquant.mbrmincorr=0
+ionquant.mbrrttol=1
+ionquant.mbrtoprun=10
+ionquant.medium=
+ionquant.minfreq=0
+ionquant.minions=1
+ionquant.minisotopes=2
+ionquant.minscans=3
+ionquant.mztol=10
+ionquant.normalization=1
+ionquant.peptidefdr=1
+ionquant.proteinfdr=1
+ionquant.requantify=1
+ionquant.rttol=0.4
+ionquant.run-ionquant=true
+ionquant.tp=0
+ionquant.uniqueness=0
+ionquant.use-labeling=false
+ionquant.use-lfq=true
+ionquant.writeindex=0
+mbg.allow_chimeric=false
+mbg.expand_db=1
+mbg.fdr=0.010
+mbg.max_glycan_q=0.01
+mbg.max_skips=0
+mbg.min_glycans=2
+mbg.min_psms=5
+mbg.residues_to_add=HexNAc(1),Hex(1),Fuc(1),NeuAc(1),NH4(1),Na(1),Fe(1)
+mbg.run-mbg=false
+metaproteomics.cmd-line-opts=
+metaproteomics.delta-hyperscore=0.0
+metaproteomics.host-name=Homo sapiens
+metaproteomics.iterations=3
+metaproteomics.min-pept-cnt-per-prot=1
+metaproteomics.min-uniq-pept-cnt=3
+metaproteomics.min-uniq-pept-cnt-per-prot=1
+metaproteomics.qvalue=0.01
+metaproteomics.run-metaproteomics=false
+msbooster.find-best-im-model=false
+msbooster.find-best-rt-model=false
+msbooster.find-best-spectra-model=false
+msbooster.fragmentation-type=0
+msbooster.im-model=DIA-NN
+msbooster.koina-url=
+msbooster.predict-im=true
+msbooster.predict-rt=true
+msbooster.predict-spectra=true
+msbooster.rt-model=DIA-NN
+msbooster.run-msbooster=true
+msbooster.spectra-model=DIA-NN
+msbooster.spectral-library-path=
+msfragger.Y_type_masses=
+msfragger.activation_types=all
+msfragger.allowed_missed_cleavage_1=2
+msfragger.allowed_missed_cleavage_2=2
+msfragger.analyzer_types=all
+msfragger.calibrate_mass=2
+msfragger.check_spectral_files=true
+msfragger.clip_nTerm_M=true
+msfragger.deisotope=1
+msfragger.delta_mass_exclude_ranges=(-1.5,3.5)
+msfragger.deneutralloss=1
+msfragger.diagnostic_fragments=
+msfragger.diagnostic_intensity_filter=0
+msfragger.digest-only=false
+msfragger.digest_max_length=50
+msfragger.digest_min_length=7
+msfragger.fragment_ion_series=b,y
+msfragger.fragment_mass_tolerance=20
+msfragger.fragment_mass_units=1
+msfragger.group_variable=0
+msfragger.intensity_transform=0
+msfragger.ion_series_definitions=
+msfragger.isotope_error=0/1/2
+msfragger.labile_fragment_ion_series=b,y
+msfragger.labile_search_mode=off
+msfragger.localize_delta_mass=false
+msfragger.mass_diff_to_variable_mod=0
+msfragger.mass_offsets=0
+msfragger.mass_offsets_detailed=
+msfragger.max_fragment_charge=2
+msfragger.max_variable_mods_combinations=5000
+msfragger.max_variable_mods_per_peptide=3
+msfragger.min_fragments_modelling=2
+msfragger.min_matched_fragments=4
+msfragger.min_sequence_matches=2
+msfragger.minimum_peaks=15
+msfragger.minimum_ratio=0.01
+msfragger.misc.fragger.clear-mz-hi=0
+msfragger.misc.fragger.clear-mz-lo=0
+msfragger.misc.fragger.digest-mass-hi=5000
+msfragger.misc.fragger.digest-mass-lo=500
+msfragger.misc.fragger.enzyme-dropdown-1=stricttrypsin
+msfragger.misc.fragger.enzyme-dropdown-2=null
+msfragger.misc.fragger.precursor-charge-hi=4
+msfragger.misc.fragger.precursor-charge-lo=1
+msfragger.misc.fragger.remove-precursor-range-hi=1.5
+msfragger.misc.fragger.remove-precursor-range-lo=-1.5
+msfragger.misc.slice-db=1
+msfragger.num_enzyme_termini=2
+msfragger.output_format=pepXML_pin
+msfragger.output_max_expect=50
+msfragger.output_report_topN=1
+msfragger.output_report_topN_dda_plus=5
+msfragger.output_report_topN_dia1=5
+msfragger.override_charge=false
+msfragger.precursor_mass_lower=-20
+msfragger.precursor_mass_mode=selected
+msfragger.precursor_mass_units=1
+msfragger.precursor_mass_upper=20
+msfragger.precursor_true_tolerance=20
+msfragger.precursor_true_units=1
+msfragger.remainder_fragment_masses=
+msfragger.remove_precursor_peak=1
+msfragger.report_alternative_proteins=true
+msfragger.require_precursor=true
+msfragger.restrict_deltamass_to=all
+msfragger.reuse_dia_fragment_peaks=false
+msfragger.run-msfragger=true
+msfragger.search_enzyme_cut_1=KR
+msfragger.search_enzyme_cut_2=
+msfragger.search_enzyme_name_1=stricttrypsin
+msfragger.search_enzyme_name_2=null
+msfragger.search_enzyme_nocut_1=
+msfragger.search_enzyme_nocut_2=
+msfragger.search_enzyme_sense_1=C
+msfragger.search_enzyme_sense_2=C
+msfragger.table.fix-mods=0.0,C-Term Peptide,true,-1; 0.0,N-Term Peptide,true,-1; 0.0,C-Term Protein,true,-1; 0.0,N-Term Protein,true,-1; 0.0,G (glycine),true,-1; 0.0,A (alanine),true,-1; 0.0,S (serine),true,-1; 0.0,P (proline),true,-1; 0.0,V (valine),true,-1; 0.0,T (threonine),true,-1; 57.02146,C (cysteine),true,-1; 0.0,L (leucine),true,-1; 0.0,I (isoleucine),true,-1; 0.0,N (asparagine),true,-1; 0.0,D (aspartic acid),true,-1; 0.0,Q (glutamine),true,-1; 0.0,K (lysine),true,-1; 0.0,E (glutamic acid),true,-1; 0.0,M (methionine),true,-1; 0.0,H (histidine),true,-1; 0.0,F (phenylalanine),true,-1; 0.0,R (arginine),true,-1; 0.0,Y (tyrosine),true,-1; 0.0,W (tryptophan),true,-1; 0.0,B ,true,-1; 0.0,J,true,-1; 0.0,O,true,-1; 0.0,U,true,-1; 0.0,X,true,-1; 0.0,Z,true,-1
+msfragger.table.var-mods=15.9949,M,true,3; 42.0106,[^,true,1; 79.96633,STY,false,3; -17.0265,nQnC,false,1; -18.0106,nE,false,1; 4.025107,K,false,2; 6.020129,R,false,2; 8.014199,K,false,2; 10.008269,R,false,2; 0.0,site_10,false,1; 0.0,site_11,false,1; 0.0,site_12,false,1; 0.0,site_13,false,1; 0.0,site_14,false,1; 0.0,site_15,false,1; 0.0,site_16,false,1
+msfragger.track_zero_topN=0
+msfragger.use_all_mods_in_first_search=false
+msfragger.use_detailed_offsets=false
+msfragger.use_topN_peaks=150
+msfragger.write_calibrated_mzml=false
+msfragger.zero_bin_accept_expect=0
+msfragger.zero_bin_mult_expect=1
+opair.activation1=HCD
+opair.activation2=ETD
+opair.allowed_sites=
+opair.filterOxonium=true
+opair.glyco_db=
+opair.max_glycans=4
+opair.max_isotope_error=2
+opair.min_isotope_error=0
+opair.ms1_tol=20
+opair.ms2_tol=20
+opair.oxonium_filtering_file=
+opair.oxonium_minimum_intensity=0.05
+opair.reverse_scan_order=false
+opair.run-opair=false
+opair.single_scan_type=false
+peptide-prophet.cmd-opts=--decoyprobs --ppm --accmass --nonparam --expectscore
+peptide-prophet.combine-pepxml=false
+peptide-prophet.run-peptide-prophet=false
+percolator.cmd-opts=--only-psms --no-terminate --post-processing-tdc
+percolator.keep-tsv-files=false
+percolator.min-prob=0.5
+percolator.run-percolator=true
+phi-report.dont-use-prot-proph-file=false
+phi-report.filter=--sequential --prot 0.01 --picked
+phi-report.pep-level-summary=false
+phi-report.print-decoys=false
+phi-report.prot-level-summary=false
+phi-report.remove-contaminants=false
+phi-report.run-report=true
+protein-prophet.cmd-opts=--maxppmdiff 2000000
+protein-prophet.run-protein-prophet=true
+ptmprophet.cmdline=NOSTACK KEEPOLD STATIC FRAGPPMTOL\=10 EM\=1 NIONS\=b M\:15.9949,n\:42.0106 MINPROB\=0.5
+ptmprophet.override-defaults=false
+ptmprophet.run-ptmprophet=false
+ptmshepherd.adv_params=false
+ptmshepherd.annotate_assigned_mods=false
+ptmshepherd.annotation-common=false
+ptmshepherd.annotation-custom=false
+ptmshepherd.annotation-glyco=false
+ptmshepherd.annotation-unimod=true
+ptmshepherd.annotation_file=
+ptmshepherd.annotation_tol=0.01
+ptmshepherd.cap_y_ions=
+ptmshepherd.decoy_type=1
+ptmshepherd.diag_ions=
+ptmshepherd.diagmine_diagMinFoldChange=3.0
+ptmshepherd.diagmine_diagMinSpecDiff=00.2
+ptmshepherd.diagmine_fragMinFoldChange=3.0
+ptmshepherd.diagmine_fragMinPropensity=00.1
+ptmshepherd.diagmine_fragMinSpecDiff=00.1
+ptmshepherd.diagmine_minIonsPerSpec=2
+ptmshepherd.diagmine_minPeps=25
+ptmshepherd.diagmine_pepMinFoldChange=3.0
+ptmshepherd.diagmine_pepMinSpecDiff=00.2
+ptmshepherd.glyco_fdr=1.00
+ptmshepherd.glyco_isotope_max=3
+ptmshepherd.glyco_isotope_min=-1
+ptmshepherd.glyco_lda=false
+ptmshepherd.glyco_lda_features=yscore,oxo,mass
+ptmshepherd.glyco_ppm_tol=50
+ptmshepherd.glycodatabase=
+ptmshepherd.histo_smoothbins=2
+ptmshepherd.iontype_a=false
+ptmshepherd.iontype_b=true
+ptmshepherd.iontype_c=false
+ptmshepherd.iontype_x=false
+ptmshepherd.iontype_y=true
+ptmshepherd.iontype_z=false
+ptmshepherd.localization_allowed_res=
+ptmshepherd.n_glyco=true
+ptmshepherd.normalization-psms=true
+ptmshepherd.normalization-scans=false
+ptmshepherd.output_extended=false
+ptmshepherd.peakpicking_mass_units=0
+ptmshepherd.peakpicking_minPsm=10
+ptmshepherd.peakpicking_promRatio=0.3
+ptmshepherd.peakpicking_width=0.002
+ptmshepherd.precursor_mass_units=0
+ptmshepherd.precursor_tol=0.01
+ptmshepherd.print_decoys=false
+ptmshepherd.print_full_glyco_params=false
+ptmshepherd.prob_mass=0.5
+ptmshepherd.remainder_masses=
+ptmshepherd.remove_glycan_delta_mass=true
+ptmshepherd.run-shepherd=false
+ptmshepherd.run_diagextract_mode=false
+ptmshepherd.run_diagmine_mode=false
+ptmshepherd.run_glyco_mode=false
+ptmshepherd.shuffle_decoy_intensities=false
+ptmshepherd.spectra_condPeaks=150
+ptmshepherd.spectra_condRatio=0.0001
+ptmshepherd.spectra_maxPrecursorCharge=4
+ptmshepherd.spectra_maxfragcharge=2
+ptmshepherd.spectra_ppmtol=20
+ptmshepherd.use_glycan_fragment_probs=false
+ptmshepherd.use_msfragger_localization=false
+ptmshepherd.varmod_masses=
+quantitation.run-label-free-quant=true
+run-psm-validation=true
+run-validation-tab=true
+saintexpress.cmd-opts=
+saintexpress.max-replicates=10
+saintexpress.run-saint-express=false
+saintexpress.virtual-controls=100
+skyline.fdr=1
+skyline.generate-skyline-quant-report=false
+skyline.min-site-prob=0.75
+skyline.mod-tag=
+skyline.run-skyline=false
+skyline.skyline=false
+skyline.skyline-custom=false
+skyline.skyline-custom-path=
+skyline.skyline-daily=true
+skyline.skyline-fragment-tolerance=10
+skyline.skyline-library-product-ions=12
+skyline.skyline-mods-mode=Default
+skyline.skyline-precursor-tolerance=10
+skyline.skyline-rt-tolerance=2
+skyline.use-existing-skyline-document=false
+speclibgen.convert-pepxml=true
+speclibgen.convert-psm=false
+speclibgen.easypqp.extras.max_delta_ppm=15
+speclibgen.easypqp.extras.max_delta_unimod=0.02
+speclibgen.easypqp.extras.max_glycan_qval=1
+speclibgen.easypqp.extras.rt_lowess_fraction=0
+speclibgen.easypqp.fragment.a=false
+speclibgen.easypqp.fragment.b=true
+speclibgen.easypqp.fragment.c=false
+speclibgen.easypqp.fragment.x=false
+speclibgen.easypqp.fragment.y=true
+speclibgen.easypqp.fragment.z=false
+speclibgen.easypqp.im-cal=Automatic selection of a run as reference IM
+speclibgen.easypqp.labile_mode=Regular (not glyco)
+speclibgen.easypqp.neutral_loss=false
+speclibgen.easypqp.rt-cal=noiRT
+speclibgen.easypqp.select-file.text=
+speclibgen.easypqp.select-im-file.text=
+speclibgen.keep-intermediate-files=false
+speclibgen.run-speclibgen=false
+tab-run.delete_temp_files=false
+tab-run.export_matched_fragments=false
+tab-run.sub_mzml_prob_threshold=0.5
+tab-run.write_sub_mzml=false
+tmtintegrator.add_Ref=-1
+tmtintegrator.aggregation_method=0
+tmtintegrator.allow_overlabel=true
+tmtintegrator.allow_unlabeled=true
+tmtintegrator.best_psm=true
+tmtintegrator.channel_num=TMT-6
+tmtintegrator.extraction_tool=IonQuant
+tmtintegrator.glyco_qval=-1
+tmtintegrator.groupby=-1
+tmtintegrator.log2transformed=true
+tmtintegrator.max_pep_prob_thres=0
+tmtintegrator.min_ntt=0
+tmtintegrator.min_pep_prob=0.9
+tmtintegrator.min_percent=0.05
+tmtintegrator.min_purity=0.5
+tmtintegrator.min_resolution=0
+tmtintegrator.min_site_prob=-1
+tmtintegrator.min_snr=0
+tmtintegrator.mod_tag=none
+tmtintegrator.ms1_int=true
+tmtintegrator.outlier_removal=true
+tmtintegrator.philosopher-msstats=false
+tmtintegrator.print_RefInt=false
+tmtintegrator.prot_exclude=none
+tmtintegrator.prot_norm=0
+tmtintegrator.psm_norm=false
+tmtintegrator.quant_level=2
+tmtintegrator.ref_d_tag=Pool
+tmtintegrator.ref_tag=Bridge
+tmtintegrator.run-tmtintegrator=false
+tmtintegrator.tolerance=20
+tmtintegrator.unique_gene=0
+tmtintegrator.unique_pep=false
+tmtintegrator.use_glycan_composition=false
+transfer-learning.credential=
+transfer-learning.instrument=Astral
+transfer-learning.keep-decoys=false
+transfer-learning.max-charge=3
+transfer-learning.min-charge=2
+transfer-learning.model-path=
+transfer-learning.nce=30
+transfer-learning.output-format=tsv
+transfer-learning.peptides-to-predict=Whole FASTA file
+transfer-learning.perform-transfer-learning=true
+transfer-learning.predict-im=true
+transfer-learning.predict-ms2=true
+transfer-learning.predict-rt=true
+transfer-learning.predict-spectral-library=true
+transfer-learning.run-transfer-learning=false
+transfer-learning.spectral-library-path=
+workdir=/work/results
+workflow.input.data-type.im-ms=false
+workflow.input.data-type.regular-ms=true
+workflow.misc.save-sdrf=true
+workflow.misc.sdrf-type=Default
+workflow.ram=20
+workflow.threads=4
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CheckCentroid
+java -Xmx20G -cp /work/rt/lib/fragpipe-24.0.jar:/work/rt/tools/batmass-io-1.36.5.jar org.nesvilab.fragpipe.util.CheckCentroid /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.raw 4
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Done in 0.0 s.
+Process 'CheckCentroid' finished, exit code: 0
+WorkspaceCleanInit [Work dir: /work/results]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+time="00:40:54" level=info msg="Executing Workspace  v5.1.3"
+time="00:40:54" level=info msg="Removing workspace"
+time="00:40:54" level=info msg=Done
+Process 'WorkspaceCleanInit' finished, exit code: 0
+WorkspaceCleanInit [Work dir: /work/results]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --init --nocheck --temp /tmp/ff740832-d950-413d-a037-3aba2b4699ee
+time="00:40:55" level=info msg="Executing Workspace  v5.1.3"
+time="00:40:55" level=info msg="Creating workspace"
+time="00:40:55" level=info msg=Done
+Process 'WorkspaceCleanInit' finished, exit code: 0
+WorkspaceCleanInit [Work dir: /work/results/HeLa_2]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+time="00:40:55" level=info msg="Executing Workspace  v5.1.3"
+time="00:40:55" level=info msg="Removing workspace"
+time="00:40:55" level=info msg=Done
+Process 'WorkspaceCleanInit' finished, exit code: 0
+WorkspaceCleanInit [Work dir: /work/results/HeLa_2]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --init --nocheck --temp /tmp/4edb6d66-3485-468c-a871-3c173678392a
+time="00:40:55" level=info msg="Executing Workspace  v5.1.3"
+time="00:40:55" level=info msg="Creating workspace"
+time="00:40:55" level=info msg=Done
+Process 'WorkspaceCleanInit' finished, exit code: 0
+WorkspaceCleanInit [Work dir: /work/results/HeLa_3]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+time="00:40:55" level=info msg="Executing Workspace  v5.1.3"
+time="00:40:55" level=info msg="Removing workspace"
+time="00:40:55" level=info msg=Done
+Process 'WorkspaceCleanInit' finished, exit code: 0
+WorkspaceCleanInit [Work dir: /work/results/HeLa_3]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --init --nocheck --temp /tmp/89a2eca0-ac02-422f-ae12-7bdd9fe2344b
+time="00:40:55" level=info msg="Executing Workspace  v5.1.3"
+time="00:40:55" level=info msg="Creating workspace"
+time="00:40:55" level=info msg=Done
+Process 'WorkspaceCleanInit' finished, exit code: 0
+WorkspaceCleanInit [Work dir: /work/results/HeLa_1]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+time="00:40:56" level=info msg="Executing Workspace  v5.1.3"
+time="00:40:56" level=info msg="Removing workspace"
+time="00:40:56" level=info msg=Done
+Process 'WorkspaceCleanInit' finished, exit code: 0
+WorkspaceCleanInit [Work dir: /work/results/HeLa_1]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --init --nocheck --temp /tmp/4ad15ad7-540f-485e-867d-1675d8d50ebc
+time="00:40:56" level=info msg="Executing Workspace  v5.1.3"
+time="00:40:56" level=info msg="Creating workspace"
+time="00:40:56" level=info msg=Done
+Process 'WorkspaceCleanInit' finished, exit code: 0
+MSFragger [Work dir: /work/results]
+java -jar -Dfile.encoding=UTF-8 -Xmx20G /opt/fragpipe/tools/MSFragger-4.4.1/MSFragger-4.4.1.jar /work/results/fragger.params /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.raw /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.raw /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.raw
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+MSFragger version MSFragger-4.4.1
+Batmass-IO version 1.36.6
+timsdata library version timsdata-2-21-0-4
+(c) University of Michigan
+RawFileReader reading tool. Copyright (c) 2016 by Thermo Fisher Scientific, Inc. All rights reserved.
+timdTOF .d reading tool. Copyright (c) 2022 by Bruker Daltonics GmbH & Co. KG. All rights reserved.
+System OS: Linux, Architecture: amd64
+Java Info: 17.0.21.0.3, OpenJDK 64-Bit Server VM, Ubuntu
+JVM started with 20 GB memory
+Checking database...
+Checking spectral files...
+20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.raw: Scans = 5998; MS2 ITMS = false; MS2 FTMS = true; MS2 ASTMS = false; MS1 ITMS = false; Isolation sizes = [1.0]; Instrument = 
+20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.raw: Scans = 5936; MS2 ITMS = false; MS2 FTMS = true; MS2 ASTMS = false; MS1 ITMS = false; Isolation sizes = [1.0]; Instrument = Orbitrap Exploris 480
+20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.raw: Scans = 6002; MS2 ITMS = false; MS2 FTMS = true; MS2 ASTMS = false; MS1 ITMS = false; Isolation sizes = [1.0]; Instrument = 
+***********************************FIRST SEARCH************************************
+Parameters:
+num_threads = 4
+database_name = /w/db/2026-11-10-decoys-reviewed-contam-UP000005640.fas
+decoy_prefix = rev_
+keep_decoys = 1
+precursor_mass_lower = -20.0
+precursor_mass_upper = 20.0
+precursor_mass_units = 1
+data_type = 0
+precursor_true_tolerance = 20.0
+precursor_true_units = 1
+fragment_mass_tolerance = 20.0
+fragment_mass_units = 1
+calibrate_mass = 2
+use_all_mods_in_first_search = 0
+write_calibrated_mzml = 0
+write_uncalibrated_mzml = 1
+write_mzbin_all = 0
+isotope_error = 0/1
+mass_offsets = 0
+use_detailed_offsets = 0
+labile_search_mode = OFF
+restrict_deltamass_to = all
+precursor_mass_mode = SELECTED
+localize_delta_mass = 0
+delta_mass_exclude_ranges = (-1.5,3.5)
+fragment_ion_series = b,y
+ion_series_definitions = 
+search_enzyme_name = stricttrypsin
+search_enzyme_sense_1 = C
+search_enzyme_cut_1 = KR
+search_enzyme_nocut_1 = 
+allowed_missed_cleavage_1 = 2
+num_enzyme_termini = 2
+clip_nTerm_M = 1
+allow_multiple_variable_mods_on_residue = 0
+max_variable_mods_per_peptide = 3
+max_variable_mods_combinations = 5000
+output_format = pepxml_pin
+output_report_topN = 1
+output_max_expect = 50.0
+report_alternative_proteins = 0
+override_charge = 0
+precursor_charge_low = 2
+precursor_charge_high = 3
+digest_min_length = 7
+digest_max_length = 50
+digest_mass_range_low = 500.0
+digest_mass_range_high = 5000.0
+max_fragment_charge = 1
+deisotope = 1
+deneutralloss = 1
+track_zero_topN = 0
+zero_bin_accept_expect = 0.0
+zero_bin_mult_expect = 1.0
+minimum_peaks = 15
+use_topN_peaks = 150
+minIonsScoring = 2
+min_matched_fragments = 4
+minimum_ratio = 0.01
+intensity_transform = 0
+activation_types = all
+analyzer_types = all
+group_variable = 0
+require_precursor = 1
+reuse_dia_fragment_peaks = 0
+remove_precursor_peak = 1
+remove_precursor_range = -1.500000,1.500000
+clear_mz_range_low = 0.0
+clear_mz_range_high = 0.0
+excluded_scan_list_file = 
+mass_diff_to_variable_mod = 0
+min_sequence_matches = 2
+check_spectral_files = 1
+variable_mod_01 = 15.9949 M 3
+variable_mod_02 = 42.0106 [^ 1
+add_A_alanine = 0.0
+add_B_user_amino_acid = 0.0
+add_C_cysteine = 57.02146
+add_Cterm_peptide = 0.0
+add_Cterm_protein = 0.0
+add_D_aspartic_acid = 0.0
+add_E_glutamic_acid = 0.0
+add_F_phenylalanine = 0.0
+add_G_glycine = 0.0
+add_H_histidine = 0.0
+add_I_isoleucine = 0.0
+add_J_user_amino_acid = 0.0
+add_K_lysine = 0.0
+add_L_leucine = 0.0
+add_M_methionine = 0.0
+add_N_asparagine = 0.0
+add_Nterm_peptide = 0.0
+add_Nterm_protein = 0.0
+add_O_user_amino_acid = 0.0  # O = pyrrolysine (237.14773 Da)
+add_P_proline = 0.0
+add_Q_glutamine = 0.0
+add_R_arginine = 0.0
+add_S_serine = 0.0
+add_T_threonine = 0.0
+add_U_user_amino_acid = 0.0  # U = selenocysteine (150.95363 Da)
+add_V_valine = 0.0
+add_W_tryptophan = 0.0
+add_X_user_amino_acid = 0.0
+add_Y_tyrosine = 0.0
+add_Z_user_amino_acid = 0.0
+Selected fragment index width 0.10 Da.
+323819538 fragments to be searched in 1 slices (3.02 GB total)
+Operating on slice 1 of 1: 
+	Fragment index slice generated in 4.51 s
+	001. 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.raw 2.9 s | deisotoping 0.1 s
+		[progress: 6002/6002 (100%) - 9970 spectra/s] 0.6s
+	002. 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.raw 2.5 s | deisotoping 0.0 s
+		[progress: 5998/5998 (100%) - 29990 spectra/s] 0.2s
+	003. 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.raw 2.5 s | deisotoping 0.0 s
+		[progress: 5936/5936 (100%) - 29680 spectra/s] 0.2s
+postprocessing 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.raw 0.0 s
+postprocessing 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.raw 0.0 s
+postprocessing 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.raw 0.0 s
+***************************FIRST SEARCH DONE IN 0.310 MIN**************************
+
+*********************MASS CALIBRATION AND PARAMETER OPTIMIZATION*******************
+-----|---------------|---------------|---------------|---------------
+     |  MS1   (Old)  |  MS1   (New)  |  MS2   (Old)  |  MS2   (New)  
+-----|---------------|---------------|---------------|---------------
+ Run |  Median  MAD  |  Median  MAD  |  Median  MAD  |  Median  MAD  
+ 001 |  -1.67   2.05 |  -0.26   0.99 |  -1.02   0.89 |  -0.05   0.84  
+ 002 |  -2.04   2.26 |  -0.13   0.94 |  -1.04   0.87 |  -0.02   0.81  
+ 003 |  -1.50   1.97 |  -0.21   1.00 |  -0.75   0.92 |  -0.03   0.85  
+-----|---------------|---------------|---------------|---------------
+Finding the optimal parameters:
+-------|-------|-------|-------|-------|-------|-------|-------|-------
+  MS2  |    5  |    7  |   10  |   15  |   20  |   25  |   30  |   50  
+-------|-------|-------|-------|-------|-------|-------|-------|-------
+ Count |   2778|   2739| skip rest
+-------|-------|-------|-------|-------|-------|-------|-------|-------
+-------|-------|-------|-------|-------|-------|-------
+ Peaks | 300_0 | 200_0 | 175_0 | 150_1 | 125_1 | 100_1 
+-------|-------|-------|-------|-------|-------|-------
+ Count |   2778|   2778|   2778|   2778|   2779|   2776
+-------|-------|-------|-------|-------|-------|-------
+-------|-------
+ Int.  |    1  
+-------|-------
+ Count |   2796
+-------|-------
+-------|-------
+ Rm P. |    0  
+-------|-------
+ Count |   2803
+-------|-------
+New fragment_mass_tolerance = 5.000000 PPM
+New use_topN_peaks = 125
+New minimum_ratio = 0.010000
+New intensity_transform = 1
+New remove_precursor_peak = 0
+************MASS CALIBRATION AND PARAMETER OPTIMIZATION DONE IN 1.177 MIN*********
+
+************************************MAIN SEARCH************************************
+Checking database...
+Parameters:
+num_threads = 4
+database_name = /w/db/2026-11-10-decoys-reviewed-contam-UP000005640.fas
+decoy_prefix = rev_
+keep_decoys = 1
+precursor_mass_lower = -20.0
+precursor_mass_upper = 20.0
+precursor_mass_units = 1
+data_type = 0
+precursor_true_tolerance = 20.0
+precursor_true_units = 1
+fragment_mass_tolerance = 5.0
+fragment_mass_units = 1
+calibrate_mass = 2
+use_all_mods_in_first_search = 0
+write_calibrated_mzml = 0
+write_uncalibrated_mzml = 1
+write_mzbin_all = 0
+isotope_error = 0/1/2
+mass_offsets = 0.0
+use_detailed_offsets = 0
+labile_search_mode = OFF
+restrict_deltamass_to = all
+precursor_mass_mode = SELECTED
+localize_delta_mass = 0
+delta_mass_exclude_ranges = (-1.5,3.5)
+fragment_ion_series = b,y
+ion_series_definitions = 
+search_enzyme_name = stricttrypsin
+search_enzyme_sense_1 = C
+search_enzyme_cut_1 = KR
+search_enzyme_nocut_1 = 
+allowed_missed_cleavage_1 = 2
+num_enzyme_termini = 2
+clip_nTerm_M = 1
+allow_multiple_variable_mods_on_residue = 0
+max_variable_mods_per_peptide = 3
+max_variable_mods_combinations = 5000
+output_format = pepxml_pin
+output_report_topN = 1
+output_max_expect = 50.0
+report_alternative_proteins = 1
+override_charge = 0
+precursor_charge_low = 1
+precursor_charge_high = 4
+digest_min_length = 7
+digest_max_length = 50
+digest_mass_range_low = 500.0
+digest_mass_range_high = 5000.0
+max_fragment_charge = 1
+deisotope = 1
+deneutralloss = 1
+track_zero_topN = 0
+zero_bin_accept_expect = 0.0
+zero_bin_mult_expect = 1.0
+minimum_peaks = 15
+use_topN_peaks = 125
+minIonsScoring = 2
+min_matched_fragments = 4
+minimum_ratio = 0.01
+intensity_transform = 1
+activation_types = all
+analyzer_types = all
+group_variable = 0
+require_precursor = 1
+reuse_dia_fragment_peaks = 0
+remove_precursor_peak = 0
+remove_precursor_range = -1.500000,1.500000
+clear_mz_range_low = 0.0
+clear_mz_range_high = 0.0
+excluded_scan_list_file = 
+mass_diff_to_variable_mod = 0
+min_sequence_matches = 2
+check_spectral_files = 1
+variable_mod_01 = 15.9949 M 3
+variable_mod_02 = 42.0106 [^ 1
+add_A_alanine = 0.0
+add_B_user_amino_acid = 0.0
+add_C_cysteine = 57.02146
+add_Cterm_peptide = 0.0
+add_Cterm_protein = 0.0
+add_D_aspartic_acid = 0.0
+add_E_glutamic_acid = 0.0
+add_F_phenylalanine = 0.0
+add_G_glycine = 0.0
+add_H_histidine = 0.0
+add_I_isoleucine = 0.0
+add_J_user_amino_acid = 0.0
+add_K_lysine = 0.0
+add_L_leucine = 0.0
+add_M_methionine = 0.0
+add_N_asparagine = 0.0
+add_Nterm_peptide = 0.0
+add_Nterm_protein = 0.0
+add_O_user_amino_acid = 0.0  # O = pyrrolysine (237.14773 Da)
+add_P_proline = 0.0
+add_Q_glutamine = 0.0
+add_R_arginine = 0.0
+add_S_serine = 0.0
+add_T_threonine = 0.0
+add_U_user_amino_acid = 0.0  # U = selenocysteine (150.95363 Da)
+add_V_valine = 0.0
+add_W_tryptophan = 0.0
+add_X_user_amino_acid = 0.0
+add_Y_tyrosine = 0.0
+add_Z_user_amino_acid = 0.0
+Selected fragment index width 0.02 Da.
+323819538 fragments to be searched in 1 slices (3.02 GB total)
+Operating on slice 1 of 1: 
+	Fragment index slice generated in 4.96 s
+	001. 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.mzBIN_calibrated 0.0 s
+		[progress: 6002/6002 (100%) - 30010 spectra/s] 0.2s
+	002. 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.mzBIN_calibrated 0.0 s
+		[progress: 5998/5998 (100%) - 59980 spectra/s] 0.1s
+	003. 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.mzBIN_calibrated 0.0 s
+		[progress: 5936/5936 (100%) - 29680 spectra/s] 0.2s
+postprocessing 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.mzBIN_calibrated 1.0 s
+postprocessing 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.mzBIN_calibrated 0.8 s
+postprocessing 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.mzBIN_calibrated 0.7 s
+***************************MAIN SEARCH DONE IN 0.178 MIN***************************
+
+*******************************TOTAL TIME 1.665 MIN********************************
+Process 'MSFragger' finished, exit code: 0
+MSFragger move pepxml
+java -cp /work/rt/lib/fragpipe-24.0.jar:/opt/fragpipe/lib/batmass-io-1.36.5.jar org.nesvilab.utils.FileMove --no-err /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pepXML /work/results/HeLa_1/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pepXML
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pin
+java -cp /work/rt/lib/fragpipe-24.0.jar:/opt/fragpipe/lib/batmass-io-1.36.5.jar org.nesvilab.utils.FileMove --no-err /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pin /work/results/HeLa_1/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pin
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'MSFragger move pin' finished, exit code: 0
+MSFragger move pepxml
+java -cp /work/rt/lib/fragpipe-24.0.jar:/opt/fragpipe/lib/batmass-io-1.36.5.jar org.nesvilab.utils.FileMove --no-err /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pepXML /work/results/HeLa_2/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pepXML
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pin
+java -cp /work/rt/lib/fragpipe-24.0.jar:/opt/fragpipe/lib/batmass-io-1.36.5.jar org.nesvilab.utils.FileMove --no-err /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pin /work/results/HeLa_2/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pin
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'MSFragger move pin' finished, exit code: 0
+MSFragger move pepxml
+java -cp /work/rt/lib/fragpipe-24.0.jar:/opt/fragpipe/lib/batmass-io-1.36.5.jar org.nesvilab.utils.FileMove --no-err /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pepXML /work/results/HeLa_3/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pepXML
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pin
+java -cp /work/rt/lib/fragpipe-24.0.jar:/opt/fragpipe/lib/batmass-io-1.36.5.jar org.nesvilab.utils.FileMove --no-err /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pin /work/results/HeLa_3/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pin
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'MSFragger move pin' finished, exit code: 0
+MSBooster [Work dir: /work/results]
+java -Djava.awt.headless=true -Xmx20G -cp /work/rt/tools/MSBooster-1.4.14.jar:/work/rt/tools/batmass-io-1.36.5.jar mainsteps.MainClass --paramsList /work/results/msbooster_params.txt
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+2026-11-10 23:42:38 [INFO] - MSBooster v1.4.14
+2026-11-10 23:42:38 [INFO] - Creating output folder at /work/results/MSBooster
+2026-11-10 23:42:38 [INFO] - Using 4 threads
+2026-11-10 23:42:39 [INFO] - Could not detect instrument type. Setting to QE. If a different instrument was used, specify using '--instrument' via the command line or 'instrument=' in the param file.
+2026-11-10 23:42:39 [INFO] - NCE and fragmentation type detected: {HCD=30.00}
+2026-11-10 23:42:39 [INFO] - Creating input file for createFull
+2026-11-10 23:42:39 [INFO] - 4373 PSMs for prediction
+2026-11-10 23:42:39 [INFO] - createFull input file generation took 45 milliseconds
+2026-11-10 23:42:39 [INFO] - Input file at /work/results/MSBooster/spectraRT_full.tsv
+2026-11-10 23:42:39 [INFO] - Generating input file for DIA-NN
+2026-11-10 23:42:39 [INFO] - Creating input file for Diann
+2026-11-10 23:42:39 [INFO] - 4373 PSMs for prediction
+2026-11-10 23:42:39 [INFO] - Writing DIA-NN input file
+2026-11-10 23:42:39 [INFO] - Diann input file generation took 47 milliseconds
+2026-11-10 23:42:39 [INFO] - Input file at /work/results/MSBooster/spectraRT.tsv
+2026-11-10 23:42:39 [INFO] - Generating DIA-NN predictions
+2026-11-10 23:42:39 [INFO] - /work/sifsearch/rt/tools/diann/1.8.2_beta_8/linux/diann-1.8.1.8 --lib /work/results/MSBooster/spectraRT.tsv --predict --threads 4 --strip-unknown-mods --predict-n-frag 100
+2026-11-10 23:42:39 [INFO] - DIA-NN 1.8.2 beta 8 (Data-Independent Acquisition by Neural Networks)
+2026-11-10 23:42:39 [INFO] - Compiled on Dec  1 2022 14:47:06
+2026-11-10 23:42:39 [INFO] - Current date and time: Wed Nov 11 00:42:39 2026
+2026-11-10 23:42:39 [INFO] - Logical CPU cores: 24
+2026-11-10 23:42:39 [INFO] - Predicted spectra will be saved in a binary format
+2026-11-10 23:42:39 [INFO] - Thread number set to 4
+2026-11-10 23:42:39 [INFO] - DIA-NN will use deep learning to predict spectra/RTs/IMs even for peptides carrying modifications which are not recognised by the deep learning predictor. In this scenario, if also generating a spectral library from the DIA data or using the MBR mode, it might or might not be better (depends on the data) to also use the --out-measured-rt option - it's recommended to test it with and without this option
+2026-11-10 23:42:39 [INFO] - Deep learning predictor will predict 100 fragments
+2026-11-10 23:42:39 [INFO] - 
+2026-11-10 23:42:39 [INFO] - 0 files will be processed
+2026-11-10 23:42:39 [INFO] - [0:00] Loading spectral library /work/results/MSBooster/spectraRT.tsv
+2026-11-10 23:42:39 [INFO] - [0:00] Finding proteotypic peptides (assuming that the list of UniProt ids provided for each peptide is complete)
+2026-11-10 23:42:39 [INFO] - [0:00] Spectral library loaded: 0 protein isoforms, 0 protein groups and 4373 precursors in 4312 elution groups.
+2026-11-10 23:42:39 [INFO] - [0:00] Encoding peptides for spectra and RTs prediction
+2026-11-10 23:42:39 [INFO] - [0:00] Predicting spectra and IMs
+2026-11-10 23:42:41 [INFO] - [0:01] Predicting RTs
+2026-11-10 23:42:41 [INFO] - [0:02] Decoding predicted spectra and IMs
+2026-11-10 23:42:41 [INFO] - [0:02] Decoding RTs
+2026-11-10 23:42:41 [INFO] - [0:02] Saving the list of predictions to /work/results/MSBooster/spectraRT.predicted.bin
+2026-11-10 23:42:41 [INFO] - Finished
+2026-11-10 23:42:41 [INFO] - Done generating DIA-NN predictions
+2026-11-10 23:42:41 [INFO] - Model running took 2411 milliseconds
+2026-11-10 23:42:41 [INFO] - Generating edited pin with following features: [unweightedSpectralEntropy, weightedSpectralEntropy, hypergeometricProbability, intersection, top6matchedIntensity, deltaRTLOESS, deltaRTLOESSreal]
+2026-11-10 23:42:41 [INFO] - Loading predicted spectra: /work/results/MSBooster/spectraRT.predicted.bin
+2026-11-10 23:42:41 [INFO] - Loading predicted retention times: /work/results/MSBooster/spectraRT.predicted.bin
+2026-11-10 23:42:41 [INFO] - /work/results/HeLa_1/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pin has 3109 PSMs
+2026-11-10 23:42:41 [INFO] - Processing pin /work/results/HeLa_1/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pin
+2026-11-10 23:42:41 [INFO] - Processing /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_uncalibrated.mzML
+...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+2026-11-10 23:42:42 [INFO] - Setting pin entries
+...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+2026-11-10 23:42:42 [INFO] - RT regression using 777 PSMs
+Iteration 1...2...3...4...5...
+2026-11-10 23:42:42 [INFO] - Best average bandwidth for mass  from grid search of 0.01,0.05,0.1,0.2 after 5 iterations is 0.044
+2026-11-10 23:42:43 [INFO] - Calculating features
+...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+2026-11-10 23:42:43 [INFO] - Writing features
+...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+2026-11-10 23:42:43 [INFO] - Edited pin file at /work/results/HeLa_1/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_edited.pin
+2026-11-10 23:42:43 [INFO] - /work/results/HeLa_2/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pin has 2951 PSMs
+2026-11-10 23:42:43 [INFO] - Processing pin /work/results/HeLa_2/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pin
+2026-11-10 23:42:43 [INFO] - Processing /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_uncalibrated.mzML
+...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+2026-11-10 23:42:44 [INFO] - Setting pin entries
+...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+2026-11-10 23:42:44 [INFO] - RT regression using 693 PSMs
+Iteration 1...2...3...4...5...
+2026-11-10 23:42:44 [INFO] - Best average bandwidth for mass  from grid search of 0.01,0.05,0.1,0.2 after 5 iterations is 0.062
+2026-11-10 23:42:44 [INFO] - Calculating features
+...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+2026-11-10 23:42:44 [INFO] - Writing features
+...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+2026-11-10 23:42:44 [INFO] - Edited pin file at /work/results/HeLa_2/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_edited.pin
+2026-11-10 23:42:44 [INFO] - /work/results/HeLa_3/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pin has 2888 PSMs
+2026-11-10 23:42:44 [INFO] - Processing pin /work/results/HeLa_3/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pin
+2026-11-10 23:42:44 [INFO] - Processing /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_uncalibrated.mzML
+...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+2026-11-10 23:42:45 [INFO] - Setting pin entries
+...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+2026-11-10 23:42:45 [INFO] - RT regression using 697 PSMs
+Iteration 1...2...3...4...5...
+2026-11-10 23:42:45 [INFO] - Best average bandwidth for mass  from grid search of 0.01,0.05,0.1,0.2 after 5 iterations is 0.052
+2026-11-10 23:42:45 [INFO] - Calculating features
+...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+2026-11-10 23:42:45 [INFO] - Writing features
+...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+2026-11-10 23:42:45 [INFO] - Edited pin file at /work/results/HeLa_3/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_edited.pin
+2026-11-10 23:42:45 [INFO] - Feature calculation, edited pin writing, and QC plot generation done in 4138 ms
+Process 'MSBooster' finished, exit code: 0
+Percolator [Work dir: /work/results/HeLa_1]
+/work/rt/tools/percolator_3_7_1/linux/percolator --only-psms --no-terminate --post-processing-tdc --num-threads 4 --results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_target_psms.tsv --decoy-results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_edited.pin
+Percolator version 3.07.1, Build Date Aug 27 2024 13:21:45
+Copyright (c) 2006-9 University of Washington. All rights reserved.
+Written by Lukas Käll (lukall@u.washington.edu) in the
+Department of Genome Sciences at the University of Washington.
+Issued command:
+/work/rt/tools/percolator_3_7_1/linux/percolator --only-psms --no-terminate --post-processing-tdc --num-threads 4 --results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_target_psms.tsv --decoy-results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_edited.pin
+Started Wed Nov 11 00:42:46 2026
+Hyperparameters: selectionFdr=0.01, Cpos=0, Cneg=0, maxNiter=10
+Reading tab-delimited input from datafile 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_edited.pin
+Features:
+rank abs_ppm isotope_error_negative isotope_error_0 isotope_error_1 isotope_error_2 isotope_error_3_more log10_evalue hyperscore delta_hyperscore matched_ion_num complementary_ions ion_series weighted_average_abs_fragment_ppm length_7 length_8 length_9_30 length_31 ntt nmc charge_1 charge_2 charge_3 charge_4 charge_5 charge_6 charge_7_or_more group_1 group_2 group_3 group_other 15.9949M unweighted_spectral_entropy weighted_spectral_entropy hypergeometric_probability intersection top6_matched_intensity delta_RT_loess delta_RT_loess_real 
+Found 3109 PSMs
+Concatenated search input detected and --post-processing-tdc flag set. Applying target-decoy competition on Percolator scores.
+Train/test set contains 2973 positives and 136 negatives, size ratio=21.8603 and pi0=1
+Warning : the number of negative samples read is too small to perform a correct classification.
+
+Selecting Cpos by cross-validation.
+Selecting Cneg by cross-validation.
+Split 1:	Selected feature 34 as initial direction. Could separate 1870 training set positives with q<0.01 in that direction.
+Split 2:	Selected feature 34 as initial direction. Could separate 1844 training set positives with q<0.01 in that direction.
+Split 3:	Selected feature 34 as initial direction. Could separate 1853 training set positives with q<0.01 in that direction.
+Found 2780 test set positives with q<0.01 in initial direction
+Reading in data and feature calculation took 0.0669 cpu seconds or 0 seconds wall clock time.
+---Training with Cpos selected by cross validation, Cneg selected by cross validation, initial_fdr=0.01, fdr=0.01
+Iteration 1:	Estimated 2845 PSMs with q<0.01
+Iteration 2:	Estimated 2855 PSMs with q<0.01
+Iteration 3:	Estimated 2861 PSMs with q<0.01
+Iteration 4:	Estimated 2863 PSMs with q<0.01
+Iteration 5:	Estimated 2863 PSMs with q<0.01
+Iteration 6:	Estimated 2863 PSMs with q<0.01
+Iteration 7:	Estimated 2863 PSMs with q<0.01
+Iteration 8:	Estimated 2863 PSMs with q<0.01
+Iteration 9:	Estimated 2863 PSMs with q<0.01
+Iteration 10:	Estimated 2863 PSMs with q<0.01
+Learned normalized SVM weights for the 3 cross-validation splits:
+ Split1	 Split2	 Split3	FeatureName
+ 0.0000	 0.0000	 0.0000	rank
+ 0.3357	-0.1961	 0.0225	abs_ppm
+ 0.0000	 0.0000	 0.0000	isotope_error_negative
+-0.0133	 0.0997	 0.4318	isotope_error_0
+-0.1211	 0.0929	-0.3381	isotope_error_1
+ 0.2011	-0.3110	-0.2595	isotope_error_2
+ 0.0000	 0.0000	 0.0000	isotope_error_3_more
+-3.3066	-0.6205	-5.3091	log10_evalue
+ 1.7929	 0.3923	 1.7609	hyperscore
+ 1.0094	 0.4228	 1.0760	delta_hyperscore
+-1.6475	 0.5145	 1.6610	matched_ion_num
+-1.9941	-0.8303	-2.1676	complementary_ions
+ 1.4416	-0.0314	-0.5183	ion_series
+ 0.1014	 0.0173	 0.8891	weighted_average_abs_fragment_ppm
+-0.4315	-0.0234	-0.1323	length_7
+-0.5650	-0.0884	 0.0643	length_8
+ 0.7599	 0.1002	 0.0969	length_9_30
+-0.1169	-0.0712	-0.3280	length_31
+ 0.0000	 0.0000	 0.0000	ntt
+-0.1113	-0.0676	-0.0246	nmc
+ 0.0000	 0.0000	 0.0000	charge_1
+-0.5248	-0.1307	-0.5835	charge_2
+ 0.5393	 0.0156	 1.0843	charge_3
+ 0.2083	 0.3374	-0.9886	charge_4
+-0.4825	-0.0282	-0.7731	charge_5
+ 0.0000	 0.0000	 0.0000	charge_6
+ 0.0000	 0.0000	 0.0000	charge_7_or_more
+ 0.0000	 0.0000	 0.0000	group_1
+ 0.0000	 0.0000	 0.0000	group_2
+ 0.0000	 0.0000	 0.0000	group_3
+ 0.0000	 0.0000	 0.0000	group_other
+ 0.3198	 0.0983	 0.6760	15.9949M
+ 2.8765	 0.4240	 0.2021	unweighted_spectral_entropy
+ 0.2627	 0.2476	 0.4171	weighted_spectral_entropy
+-2.4748	-0.3054	 1.9471	hypergeometric_probability
+ 2.9900	 0.5534	 2.5886	intersection
+-0.8362	-0.1157	-0.7035	top6_matched_intensity
+-1.7708	-0.1665	-0.9628	delta_RT_loess
+-0.1160	-0.4704	-1.6800	delta_RT_loess_real
+ 7.7512	 2.1804	 13.8014	m0
+Found 2853 test set PSMs with q<0.01.
+Selected best-scoring PSM per file+scan+expMass (target-decoy competition): 2973 target PSMs and 136 decoy PSMs.
+Calculating q values.
+Final list yields 2857 target PSMs with q<0.01.
+Calculating posterior error probabilities (PEPs).
+Processing took 4.0156 cpu seconds or 1 seconds wall clock time.
+Process 'Percolator' finished, exit code: 0
+Percolator [Work dir: /work/results/HeLa_2]
+/work/rt/tools/percolator_3_7_1/linux/percolator --only-psms --no-terminate --post-processing-tdc --num-threads 4 --results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_target_psms.tsv --decoy-results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_edited.pin
+Percolator version 3.07.1, Build Date Aug 27 2024 13:21:45
+Copyright (c) 2006-9 University of Washington. All rights reserved.
+Written by Lukas Käll (lukall@u.washington.edu) in the
+Department of Genome Sciences at the University of Washington.
+Issued command:
+/work/rt/tools/percolator_3_7_1/linux/percolator --only-psms --no-terminate --post-processing-tdc --num-threads 4 --results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_target_psms.tsv --decoy-results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_edited.pin
+Started Wed Nov 11 00:42:48 2026
+Hyperparameters: selectionFdr=0.01, Cpos=0, Cneg=0, maxNiter=10
+Reading tab-delimited input from datafile 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_edited.pin
+Features:
+rank abs_ppm isotope_error_negative isotope_error_0 isotope_error_1 isotope_error_2 isotope_error_3_more log10_evalue hyperscore delta_hyperscore matched_ion_num complementary_ions ion_series weighted_average_abs_fragment_ppm length_7 length_8 length_9_30 length_31 ntt nmc charge_1 charge_2 charge_3 charge_4 charge_5 charge_6 charge_7_or_more group_1 group_2 group_3 group_other 15.9949M unweighted_spectral_entropy weighted_spectral_entropy hypergeometric_probability intersection top6_matched_intensity delta_RT_loess delta_RT_loess_real 
+Found 2951 PSMs
+Concatenated search input detected and --post-processing-tdc flag set. Applying target-decoy competition on Percolator scores.
+Train/test set contains 2821 positives and 130 negatives, size ratio=21.7 and pi0=1
+Warning : the number of negative samples read is too small to perform a correct classification.
+
+Selecting Cpos by cross-validation.
+Selecting Cneg by cross-validation.
+Split 1:	Selected feature 34 as initial direction. Could separate 1789 training set positives with q<0.01 in that direction.
+Split 2:	Selected feature 34 as initial direction. Could separate 1773 training set positives with q<0.01 in that direction.
+Split 3:	Selected feature 39 as initial direction. Could separate 1803 training set positives with q<0.01 in that direction.
+Found 2435 test set positives with q<0.01 in initial direction
+Reading in data and feature calculation took 0.0601 cpu seconds or 0 seconds wall clock time.
+---Training with Cpos selected by cross validation, Cneg selected by cross validation, initial_fdr=0.01, fdr=0.01
+Iteration 1:	Estimated 2719 PSMs with q<0.01
+Iteration 2:	Estimated 2720 PSMs with q<0.01
+Iteration 3:	Estimated 2721 PSMs with q<0.01
+Iteration 4:	Estimated 2730 PSMs with q<0.01
+Iteration 5:	Estimated 2729 PSMs with q<0.01
+Iteration 6:	Estimated 2729 PSMs with q<0.01
+Iteration 7:	Estimated 2735 PSMs with q<0.01
+Iteration 8:	Estimated 2736 PSMs with q<0.01
+Iteration 9:	Estimated 2736 PSMs with q<0.01
+Iteration 10:	Estimated 2736 PSMs with q<0.01
+Learned normalized SVM weights for the 3 cross-validation splits:
+ Split1	 Split2	 Split3	FeatureName
+ 0.0000	 0.0000	 0.0000	rank
+-0.1987	-0.2023	-0.0897	abs_ppm
+ 0.0000	 0.0000	 0.0000	isotope_error_negative
+ 0.0682	 0.3282	 0.0445	isotope_error_0
+ 0.0896	 0.0851	-0.0149	isotope_error_1
+-0.2441	-0.6834	-0.0552	isotope_error_2
+ 0.0000	 0.0000	 0.0000	isotope_error_3_more
+-0.4694	-0.7875	-0.3518	log10_evalue
+ 0.3900	 0.5757	 0.0234	hyperscore
+ 0.3806	 0.9045	 0.4531	delta_hyperscore
+ 0.6324	 2.2293	 0.2827	matched_ion_num
+-0.6242	-1.8831	-0.2980	complementary_ions
+-0.1132	-0.9514	 0.2064	ion_series
+ 0.0150	-0.0778	-0.0848	weighted_average_abs_fragment_ppm
+-0.0319	-0.0405	-0.1630	length_7
+-0.0856	-0.1632	-0.0816	length_8
+ 0.0916	 0.2037	 0.1587	length_9_30
+-0.0117	-0.2561	 0.0859	length_31
+ 0.0000	 0.0000	 0.0000	ntt
+-0.1463	-0.2782	-0.1330	nmc
+ 0.0000	 0.0000	 0.0000	charge_1
+-0.0775	 0.0427	 0.0288	charge_2
+ 0.0806	-0.0241	-0.0113	charge_3
+ 0.0221	 0.0135	-0.0446	charge_4
+-0.0534	-0.1643	-0.0135	charge_5
+ 0.0000	 0.0000	 0.0000	charge_6
+ 0.0000	 0.0000	 0.0000	charge_7_or_more
+ 0.0000	 0.0000	 0.0000	group_1
+ 0.0000	 0.0000	 0.0000	group_2
+ 0.0000	 0.0000	 0.0000	group_3
+ 0.0000	 0.0000	 0.0000	group_other
+ 0.0648	 0.2820	 0.0073	15.9949M
+ 0.1771	 1.0204	 0.1117	unweighted_spectral_entropy
+ 0.0489	-0.9283	 0.2865	weighted_spectral_entropy
+-0.4970	-0.3863	-0.3110	hypergeometric_probability
+ 0.5432	 2.6971	 0.0570	intersection
+ 0.0729	 0.0218	 0.1971	top6_matched_intensity
+-0.1880	 0.2501	-0.3442	delta_RT_loess
+-0.5948	-0.7608	-0.6617	delta_RT_loess_real
+ 1.7878	 5.0058	 1.7256	m0
+Found 2731 test set PSMs with q<0.01.
+Selected best-scoring PSM per file+scan+expMass (target-decoy competition): 2821 target PSMs and 130 decoy PSMs.
+Calculating q values.
+Final list yields 2731 target PSMs with q<0.01.
+Calculating posterior error probabilities (PEPs).
+Processing took 5.1615 cpu seconds or 3 seconds wall clock time.
+Process 'Percolator' finished, exit code: 0
+Percolator [Work dir: /work/results/HeLa_3]
+/work/rt/tools/percolator_3_7_1/linux/percolator --only-psms --no-terminate --post-processing-tdc --num-threads 4 --results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_target_psms.tsv --decoy-results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_edited.pin
+Percolator version 3.07.1, Build Date Aug 27 2024 13:21:45
+Copyright (c) 2006-9 University of Washington. All rights reserved.
+Written by Lukas Käll (lukall@u.washington.edu) in the
+Department of Genome Sciences at the University of Washington.
+Issued command:
+/work/rt/tools/percolator_3_7_1/linux/percolator --only-psms --no-terminate --post-processing-tdc --num-threads 4 --results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_target_psms.tsv --decoy-results-psms 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_edited.pin
+Started Wed Nov 11 00:42:51 2026
+Hyperparameters: selectionFdr=0.01, Cpos=0, Cneg=0, maxNiter=10
+Reading tab-delimited input from datafile 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_edited.pin
+Features:
+rank abs_ppm isotope_error_negative isotope_error_0 isotope_error_1 isotope_error_2 isotope_error_3_more log10_evalue hyperscore delta_hyperscore matched_ion_num complementary_ions ion_series weighted_average_abs_fragment_ppm length_7 length_8 length_9_30 length_31 ntt nmc charge_1 charge_2 charge_3 charge_4 charge_5 charge_6 charge_7_or_more group_1 group_2 group_3 group_other 15.9949M unweighted_spectral_entropy weighted_spectral_entropy hypergeometric_probability intersection top6_matched_intensity delta_RT_loess delta_RT_loess_real 
+Found 2888 PSMs
+Concatenated search input detected and --post-processing-tdc flag set. Applying target-decoy competition on Percolator scores.
+Train/test set contains 2786 positives and 102 negatives, size ratio=27.3137 and pi0=1
+Warning : the number of negative samples read is too small to perform a correct classification.
+
+Selecting Cpos by cross-validation.
+Selecting Cneg by cross-validation.
+Split 1:	Selected feature 34 as initial direction. Could separate 1737 training set positives with q<0.01 in that direction.
+Split 2:	Selected feature 39 as initial direction. Could separate 1802 training set positives with q<0.01 in that direction.
+Split 3:	Selected feature 39 as initial direction. Could separate 1781 training set positives with q<0.01 in that direction.
+Found 2552 test set positives with q<0.01 in initial direction
+Reading in data and feature calculation took 0.0550 cpu seconds or 0 seconds wall clock time.
+---Training with Cpos selected by cross validation, Cneg selected by cross validation, initial_fdr=0.01, fdr=0.01
+Iteration 1:	Estimated 2687 PSMs with q<0.01
+Iteration 2:	Estimated 2691 PSMs with q<0.01
+Iteration 3:	Estimated 2697 PSMs with q<0.01
+Iteration 4:	Estimated 2694 PSMs with q<0.01
+Iteration 5:	Estimated 2698 PSMs with q<0.01
+Iteration 6:	Estimated 2700 PSMs with q<0.01
+Iteration 7:	Estimated 2701 PSMs with q<0.01
+Iteration 8:	Estimated 2704 PSMs with q<0.01
+Iteration 9:	Estimated 2704 PSMs with q<0.01
+Iteration 10:	Estimated 2704 PSMs with q<0.01
+Learned normalized SVM weights for the 3 cross-validation splits:
+ Split1	 Split2	 Split3	FeatureName
+ 0.0000	 0.0000	 0.0000	rank
+-0.1298	 0.0267	-0.4405	abs_ppm
+ 0.0000	 0.0000	 0.0000	isotope_error_negative
+ 0.0010	 0.0077	-0.1279	isotope_error_0
+ 0.0430	 0.0153	 0.3255	isotope_error_1
+-0.0662	-0.0368	-0.2604	isotope_error_2
+ 0.0000	 0.0000	 0.0000	isotope_error_3_more
+-1.2609	-1.3162	-0.3437	log10_evalue
+-0.7130	 0.2820	-1.1879	hyperscore
+ 0.4909	 0.2441	 1.2270	delta_hyperscore
+ 3.4354	 0.0721	 2.8808	matched_ion_num
+-1.4483	-0.8924	-0.9843	complementary_ions
+-0.8669	 0.1827	-0.5358	ion_series
+-0.2418	-0.2284	 0.3237	weighted_average_abs_fragment_ppm
+ 0.0462	 0.0367	-0.2240	length_7
+ 0.0390	 0.1052	-0.0524	length_8
+-0.0079	-0.0814	 0.2024	length_9_30
+-0.3040	-0.1543	-0.0666	length_31
+ 0.0000	 0.0000	 0.0000	ntt
+-0.2689	 0.0387	-0.0667	nmc
+ 0.0000	 0.0000	 0.0000	charge_1
+-0.2597	-0.0745	-0.2314	charge_2
+ 0.1511	-0.0246	-0.1182	charge_3
+ 0.3731	 0.3022	 0.9785	charge_4
+-0.1855	-0.1019	-0.1022	charge_5
+ 0.0000	 0.0000	 0.0000	charge_6
+ 0.0000	 0.0000	 0.0000	charge_7_or_more
+ 0.0000	 0.0000	 0.0000	group_1
+ 0.0000	 0.0000	 0.0000	group_2
+ 0.0000	 0.0000	 0.0000	group_3
+ 0.0000	 0.0000	 0.0000	group_other
+ 0.4053	 0.3031	 0.2515	15.9949M
+-0.0977	-0.5977	 2.1928	unweighted_spectral_entropy
+ 0.6698	 1.0872	-2.2412	weighted_spectral_entropy
+ 1.1489	 0.2791	 0.0372	hypergeometric_probability
+-0.2405	 0.0181	 2.0256	intersection
+-0.3290	 0.0960	-0.5275	top6_matched_intensity
+-0.4132	-0.6765	-0.4532	delta_RT_loess
+-1.3487	-0.7794	-1.3048	delta_RT_loess_real
+ 4.3550	 2.4570	 4.4256	m0
+Found 2668 test set PSMs with q<0.01.
+Selected best-scoring PSM per file+scan+expMass (target-decoy competition): 2786 target PSMs and 102 decoy PSMs.
+Calculating q values.
+Final list yields 2683 target PSMs with q<0.01.
+Calculating posterior error probabilities (PEPs).
+Processing took 4.8476 cpu seconds or 2 seconds wall clock time.
+Process 'Percolator' finished, exit code: 0
+Percolator: Convert to pepxml [Work dir: /work/results/HeLa_1]
+java -cp /work/rt/lib/* org.nesvilab.fragpipe.tools.percolator.PercolatorOutputToPepXML 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pin 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_target_psms.tsv 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_decoy_psms.tsv interact-20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1 DDA 0.5 /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_uncalibrated.mzML
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'Percolator: Convert to pepxml' finished, exit code: 0
+Percolator delete temp
+java -cp /work/rt/lib/fragpipe-24.0.jar org.nesvilab.utils.FileDelete /work/results/HeLa_1/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_target_psms.tsv
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'Percolator delete temp' finished, exit code: 0
+Percolator delete temp
+java -cp /work/rt/lib/fragpipe-24.0.jar org.nesvilab.utils.FileDelete /work/results/HeLa_1/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1_percolator_decoy_psms.tsv
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'Percolator delete temp' finished, exit code: 0
+Percolator: Convert to pepxml [Work dir: /work/results/HeLa_2]
+java -cp /work/rt/lib/* org.nesvilab.fragpipe.tools.percolator.PercolatorOutputToPepXML 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pin 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_target_psms.tsv 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_decoy_psms.tsv interact-20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2 DDA 0.5 /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_uncalibrated.mzML
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'Percolator: Convert to pepxml' finished, exit code: 0
+Percolator delete temp
+java -cp /work/rt/lib/fragpipe-24.0.jar org.nesvilab.utils.FileDelete /work/results/HeLa_2/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_target_psms.tsv
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'Percolator delete temp' finished, exit code: 0
+Percolator delete temp
+java -cp /work/rt/lib/fragpipe-24.0.jar org.nesvilab.utils.FileDelete /work/results/HeLa_2/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2_percolator_decoy_psms.tsv
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'Percolator delete temp' finished, exit code: 0
+Percolator: Convert to pepxml [Work dir: /work/results/HeLa_3]
+java -cp /work/rt/lib/* org.nesvilab.fragpipe.tools.percolator.PercolatorOutputToPepXML 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pin 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_target_psms.tsv 20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_decoy_psms.tsv interact-20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3 DDA 0.5 /work/raw/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_uncalibrated.mzML
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'Percolator: Convert to pepxml' finished, exit code: 0
+Percolator delete temp
+java -cp /work/rt/lib/fragpipe-24.0.jar org.nesvilab.utils.FileDelete /work/results/HeLa_3/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_target_psms.tsv
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'Percolator delete temp' finished, exit code: 0
+Percolator delete temp
+java -cp /work/rt/lib/fragpipe-24.0.jar org.nesvilab.utils.FileDelete /work/results/HeLa_3/20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3_percolator_decoy_psms.tsv
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+Process 'Percolator delete temp' finished, exit code: 0
+ProteinProphet [Work dir: /work/results]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 proteinprophet --maxppmdiff 2000000 --output combined /work/results/filelist_proteinprophet.txt
+time="00:42:56" level=info msg="Executing ProteinProphet  v5.1.3"
+ProteinProphet (C++) by Insilicos LLC and LabKey Software, after the original Perl by A. Keller (TPP v6.0.0-rc15 Noctilucent, Build 202105021430-exported (Linux-x86_64))
+ (no FPKM) (no groups) (using degen pep info)
+Reading in /work/results/HeLa_1/interact-20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pep.xml...
+...read in 0 1+, 2143 2+, 679 3+, 64 4+, 11 5+, 0 6+, 0 7+ spectra with min prob 0.05
+
+Reading in /work/results/HeLa_2/interact-20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pep.xml...
+...read in 0 1+, 2027 2+, 666 3+, 66 4+, 10 5+, 0 6+, 0 7+ spectra with min prob 0.05
+
+Reading in /work/results/HeLa_3/interact-20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pep.xml...
+...read in 0 1+, 1992 2+, 658 3+, 74 4+, 8 5+, 0 6+, 0 7+ spectra with min prob 0.05
+
+Initializing 3956 peptide weights: 0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Calculating protein lengths and molecular weights from database /w/db/2026-11-10-decoys-reviewed-contam-UP000005640.fas
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........1000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........2000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........3000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........4000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........5000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........6000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........7000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........8000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........9000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........10000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........11000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........12000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........13000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........14000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........15000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........16000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........17000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........18000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........19000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........20000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........21000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........22000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........23000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........24000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........25000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........26000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........27000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........28000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........29000
+.........:.........:........WARNING: Found the following zero-mass residues in protein entry sp|Q16881|TRXR1_HUMAN : U
+MGCAEGKAVAAAAPTELQTKGKNGDGRRRSAKDHHPGKTLPENPAGFTSTATADSRALLQAYIDGHSVVIFSRSTCTRCTEVKKLFKSLCVPYFVLELDQTEDGRALEGTLSELAAETDLPVVFVKQRKIGGHGPTLKAYQEGRLQKLLKMNGPEDLPKSYDYDLIIIGGGSGGLAAAKEAAQYGKKVMVLDFVTPTPLGTRWGLGGTCVNVGCIPKKLMHQAALLGQALQDSRNYGWKVEETVKHDWDRMIEAVQNHIGSLNWGYRVALREKKVVYENAYGQFIGPHRIKATNNKGKEKIYSAERFLIATGERPRYLGIPGDKEYCISSDDLFSLPYCPGKTLVVGASYVALECAGFLAGIGLDVTVMVRSILLRGFDQDMANKIGEHMEEHGIKFIRQFVPIKVEQIEAGTPGRLRVVAQSTNSEEIIEGEYNTVMLAIGRDACTRKIGLETVGVKINEKTGKIPVTDEEQTNVPYIYAIGDILEDKVELTPVAIQAGRLLAQRLYAGSTVKCDYENVPTTVFTPLEYGACGLSEEKAVEKFGEENIEVYHSYFWPLEWTIPSRDNNKCYAKIICNTKDNERVVGFHVLGPNAGEVTQGFAAALKCGLTKKQLDSTIGIHPVCAEVFTTLSVTKRSGASILQAGCUG
+.:.........:.........:.........:.........:.........:.........:.........30000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........31000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........32000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........33000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........34000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........35000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........36000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........37000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........38000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........39000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........40000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:..  Total: 40924
+Computing degenerate peptides for 1533 proteins: 0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Computing probabilities for 1631 proteins.  Loop 1: 0%...20%...40%...60%...80%...100%  Loop 2: 0%...20%...40%...60%...80%...100%
+Computing probabilities for 1631 proteins.  Loop 1: 0%...20%...40%...60%...80%...100%  Loop 2: 0%...20%...40%...60%...80%...100%
+Computing probabilities for 1631 proteins.  Loop 1: 0%...20%...40%...60%...80%...100%  Loop 2: 0%...20%...40%...60%...80%...100%
+Computing probabilities for 1631 proteins.  Loop 1: 0%...20%...40%...60%...80%...100%  Loop 2: 0%...20%...40%...60%...80%...100%
+Calculating sensitivity...and error tables...
+INFO: mu=1.16606e-06, db_size=45709146
+Computing MU for 1631 proteins: 0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+time="00:42:58" level=info msg=Done
+Process 'ProteinProphet' finished, exit code: 0
+PhilosopherDbAnnotate [Work dir: /work/results/HeLa_1]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 database --annotate /w/db/2026-11-10-decoys-reviewed-contam-UP000005640.fas --prefix rev_
+time="00:42:58" level=info msg="Executing Database  v5.1.3"
+time="00:42:58" level=info msg="Annotating the database"
+time="00:42:58" level=info msg=Done
+Process 'PhilosopherDbAnnotate' finished, exit code: 0
+PhilosopherFilter [Work dir: /work/results/HeLa_1]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 filter --sequential --prot 0.01 --picked --tag rev_ --pepxml /work/results/HeLa_1 --protxml /work/results/combined.prot.xml --razor
+time="00:42:58" level=info msg="Executing Filter  v5.1.3"
+time="00:42:58" level=info msg="Processing peptide identification files"
+time="00:42:58" level=info msg="Parsing /work/results/HeLa_1/interact-20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep1.pep.xml"
+time="00:42:58" level=info msg="1+ Charge profile" decoy=0 target=0
+time="00:42:58" level=info msg="2+ Charge profile" decoy=27 target=2116
+time="00:42:58" level=info msg="3+ Charge profile" decoy=4 target=675
+time="00:42:58" level=info msg="4+ Charge profile" decoy=1 target=63
+time="00:42:58" level=info msg="5+ Charge profile" decoy=0 target=11
+time="00:42:58" level=info msg="6+ Charge profile" decoy=0 target=0
+time="00:42:58" level=info msg="Database search results" ions=2866 peptides=2709 psms=2897
+time="00:42:58" level=info msg="Converged to 0.98 % FDR with 2857 PSMs" decoy=28 threshold=0.648823 total=2885
+time="00:42:58" level=info msg="Converged to 0.97 % FDR with 2667 Peptides" decoy=26 threshold=0.682175 total=2693
+time="00:42:58" level=info msg="Converged to 0.99 % FDR with 2826 Ions" decoy=28 threshold=0.648823 total=2854
+time="00:42:58" level=info msg="Protein inference results" decoy=75 target=1280
+time="00:42:58" level=info msg="Converged to 0.95 % FDR with 944 Proteins" decoy=9 threshold=0.9923 total=953
+time="00:42:58" level=info msg="Applying sequential FDR estimation" ions=2753 peptides=2596 psms=2783
+time="00:42:58" level=info msg="2778 PSMs" decoy=4 threshold=0.67084 total=2782
+time="00:42:58" level=info msg="2591 Peptides" decoy=4 threshold=0.682175 total=2595
+time="00:42:58" level=info msg="2748 Ions" decoy=4 threshold=0.67084 total=2752
+time="00:42:58" level=info msg="Post processing identifications"
+time="00:42:58" level=info msg="Assigning protein identifications to layers"
+time="00:42:59" level=info msg="Processing protein inference"
+time="00:42:59" level=info msg="Synchronizing PSMs and proteins"
+time="00:42:59" level=info msg="Final report numbers after FDR filtering, and post-processing" ions=2748 peptides=2591 proteins=844 psms=2778
+time="00:42:59" level=info msg=Saving
+time="00:42:59" level=info msg=Done
+Process 'PhilosopherFilter' finished, exit code: 0
+PhilosopherFilter [Work dir: /work/results/HeLa_2]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 filter --sequential --prot 0.01 --picked --tag rev_ --pepxml /work/results/HeLa_2 --dbbin /work/results/HeLa_1 --protxml /work/results/combined.prot.xml --probin /work/results/HeLa_1 --razor
+time="00:42:59" level=info msg="Executing Filter  v5.1.3"
+time="00:42:59" level=info msg="Fetching protein inference from /work/results/HeLa_1"
+time="00:42:59" level=info msg="Processing peptide identification files"
+time="00:42:59" level=info msg="Parsing /work/results/HeLa_2/interact-20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep2.pep.xml"
+time="00:42:59" level=info msg="1+ Charge profile" decoy=0 target=0
+time="00:42:59" level=info msg="2+ Charge profile" decoy=24 target=2003
+time="00:42:59" level=info msg="3+ Charge profile" decoy=5 target=661
+time="00:42:59" level=info msg="4+ Charge profile" decoy=2 target=64
+time="00:42:59" level=info msg="5+ Charge profile" decoy=0 target=10
+time="00:42:59" level=info msg="6+ Charge profile" decoy=0 target=0
+time="00:42:59" level=info msg="Database search results" ions=2737 peptides=2580 psms=2769
+time="00:42:59" level=info msg="Converged to 0.99 % FDR with 2731 PSMs" decoy=27 threshold=0.617257 total=2758
+time="00:42:59" level=info msg="Converged to 0.98 % FDR with 2542 Peptides" decoy=25 threshold=0.625049 total=2567
+time="00:42:59" level=info msg="Converged to 0.96 % FDR with 2699 Ions" decoy=26 threshold=0.618584 total=2725
+time="00:42:59" level=info msg="Protein inference results" decoy=75 target=1280
+time="00:42:59" level=info msg="Converged to 0.95 % FDR with 944 Proteins" decoy=9 threshold=0.9923 total=953
+time="00:42:59" level=info msg="Applying sequential FDR estimation" ions=2651 peptides=2494 psms=2683
+time="00:42:59" level=info msg="2677 PSMs" decoy=5 threshold=0.667844 total=2682
+time="00:42:59" level=info msg="2488 Peptides" decoy=5 threshold=0.667844 total=2493
+time="00:42:59" level=info msg="2645 Ions" decoy=5 threshold=0.667844 total=2650
+time="00:42:59" level=info msg="Post processing identifications"
+time="00:42:59" level=info msg="Assigning protein identifications to layers"
+time="00:42:59" level=info msg="Processing protein inference"
+time="00:42:59" level=info msg="Synchronizing PSMs and proteins"
+time="00:42:59" level=info msg="Final report numbers after FDR filtering, and post-processing" ions=2645 peptides=2488 proteins=815 psms=2677
+time="00:42:59" level=info msg=Saving
+time="00:42:59" level=info msg=Done
+Process 'PhilosopherFilter' finished, exit code: 0
+PhilosopherFilter [Work dir: /work/results/HeLa_3]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 filter --sequential --prot 0.01 --picked --tag rev_ --pepxml /work/results/HeLa_3 --dbbin /work/results/HeLa_1 --protxml /work/results/combined.prot.xml --probin /work/results/HeLa_1 --razor
+time="00:42:59" level=info msg="Executing Filter  v5.1.3"
+time="00:42:59" level=info msg="Fetching protein inference from /work/results/HeLa_1"
+time="00:42:59" level=info msg="Processing peptide identification files"
+time="00:42:59" level=info msg="Parsing /work/results/HeLa_3/interact-20230524_E0_Neo0_FAIMS_uPAC_5cm_pepmapPrecol_LF_250pg_from5ngPuL_HeLa_DDA_iso1_rep3.pep.xml"
+time="00:42:59" level=info msg="1+ Charge profile" decoy=0 target=0
+time="00:42:59" level=info msg="2+ Charge profile" decoy=21 target=1971
+time="00:42:59" level=info msg="3+ Charge profile" decoy=7 target=651
+time="00:42:59" level=info msg="4+ Charge profile" decoy=1 target=73
+time="00:42:59" level=info msg="5+ Charge profile" decoy=0 target=8
+time="00:42:59" level=info msg="6+ Charge profile" decoy=0 target=0
+time="00:42:59" level=info msg="Database search results" ions=2697 peptides=2535 psms=2732
+time="00:42:59" level=info msg="Converged to 0.97 % FDR with 2689 PSMs" decoy=26 threshold=0.725698 total=2715
+time="00:42:59" level=info msg="Converged to 0.97 % FDR with 2475 Peptides" decoy=24 threshold=0.831399 total=2499
+time="00:42:59" level=info msg="Converged to 0.98 % FDR with 2654 Ions" decoy=26 threshold=0.725698 total=2680
+time="00:42:59" level=info msg="Protein inference results" decoy=75 target=1280
+time="00:42:59" level=info msg="Converged to 0.95 % FDR with 944 Proteins" decoy=9 threshold=0.9923 total=953
+time="00:43:00" level=info msg="Applying sequential FDR estimation" ions=2602 peptides=2441 psms=2636
+time="00:43:00" level=info msg="2630 PSMs" decoy=5 threshold=0.729842 total=2635
+time="00:43:00" level=info msg="2424 Peptides" decoy=5 threshold=0.842313 total=2429
+time="00:43:00" level=info msg="2596 Ions" decoy=5 threshold=0.729842 total=2601
+time="00:43:00" level=info msg="Post processing identifications"
+time="00:43:00" level=info msg="Assigning protein identifications to layers"
+time="00:43:00" level=info msg="Processing protein inference"
+time="00:43:00" level=info msg="Synchronizing PSMs and proteins"
+time="00:43:00" level=info msg="Final report numbers after FDR filtering, and post-processing" ions=2596 peptides=2424 proteins=799 psms=2630
+time="00:43:00" level=info msg=Saving
+time="00:43:00" level=info msg=Done
+Process 'PhilosopherFilter' finished, exit code: 0
+PhilosopherReport [Work dir: /work/results/HeLa_2]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 report
+time="00:43:00" level=info msg="Executing Report  v5.1.3"
+time="00:43:00" level=info msg="Creating reports"
+time="00:43:00" level=info msg=Done
+Process 'PhilosopherReport' finished, exit code: 0
+PhilosopherReport [Work dir: /work/results/HeLa_3]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 report
+time="00:43:00" level=info msg="Executing Report  v5.1.3"
+time="00:43:00" level=info msg="Creating reports"
+time="00:43:00" level=info msg=Done
+Process 'PhilosopherReport' finished, exit code: 0
+PhilosopherReport [Work dir: /work/results/HeLa_1]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 report
+time="00:43:00" level=info msg="Executing Report  v5.1.3"
+time="00:43:00" level=info msg="Creating reports"
+time="00:43:00" level=info msg=Done
+Process 'PhilosopherReport' finished, exit code: 0
+WorkspaceClean [Work dir: /work/results]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+time="00:43:01" level=info msg="Executing Workspace  v5.1.3"
+time="00:43:01" level=info msg="Removing workspace"
+time="00:43:01" level=info msg=Done
+Process 'WorkspaceClean' finished, exit code: 0
+WorkspaceClean [Work dir: /work/results/HeLa_2]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+time="00:43:01" level=info msg="Executing Workspace  v5.1.3"
+time="00:43:01" level=info msg="Removing workspace"
+time="00:43:01" level=info msg=Done
+Process 'WorkspaceClean' finished, exit code: 0
+WorkspaceClean [Work dir: /work/results/HeLa_3]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+time="00:43:01" level=info msg="Executing Workspace  v5.1.3"
+time="00:43:01" level=info msg="Removing workspace"
+time="00:43:01" level=info msg=Done
+Process 'WorkspaceClean' finished, exit code: 0
+WorkspaceClean [Work dir: /work/results/HeLa_1]
+/work/rt/tools/Philosopher/philosopher-v5.1.3-RC9 workspace --clean --nocheck
+time="00:43:01" level=info msg="Executing Workspace  v5.1.3"
+time="00:43:01" level=info msg="Removing workspace"
+time="00:43:01" level=info msg=Done
+Process 'WorkspaceClean' finished, exit code: 0
+IonQuant [Work dir: /work/results]
+java -Djava.awt.headless=true -Xmx20G -Dlibs.bruker.dir=/opt/fragpipe/tools/MSFragger-4.4.1/ext/bruker -Dlibs.thermo.dir=/opt/fragpipe/tools/MSFragger-4.4.1/ext/thermo -cp /work/rt/tools/jfreechart-1.5.3.jar:/opt/fragpipe/tools/IonQuant-1.11.20.jar ionquant.IonQuant --threads 4 --perform-ms1quant 1 --perform-isoquant 0 --isotol 20.0 --isolevel 2 --isotype tmt10 --ionmobility 0 --site-reports 1 --msstats 1 --minexps 1 --mbr 1 --maxlfq 1 --requantify 1 --mztol 10 --imtol 0.05 --rttol 0.4 --mbrmincorr 0 --mbrrttol 1 --mbrimtol 0.05 --mbrtoprun 10 --ionfdr 0.01 --proteinfdr 1 --peptidefdr 1 --normalization 1 --minisotopes 2 --intensitymode 2 --minscans 3 --writeindex 0 --tp 0 --minfreq 0 --minions 1 --locprob 0.75 --uniqueness 0 --multidir . --filelist /work/results/filelist_ionquant.txt --modlist /work/results/modmasses_ionquant.txt
+NOTE: Picked up JDK_JAVA_OPTIONS: -Duser.home=/root 
+IonQuant version IonQuant-1.11.20
+Batmass-IO version 1.36.6
+timsdata library version timsdata-2-21-0-4
+(c) University of Michigan
+System OS: Linux, Architecture: amd64
+Java Info: 17.0.21.0.3, OpenJDK 64-Bit Server VM, Ubuntu
+JVM started with 20 GB memory
+2026-11-10 23:43:02 [INFO] - Collecting variable modifications from all psm.tsv files...
+2026-11-10 23:43:02 [INFO] - Loading and indexing all psm.tsv files...
+2026-11-10 23:43:02 [INFO] - Indexing experiments...
+2026-11-10 23:43:02 [INFO] - Indexing runs...
+2026-11-10 23:43:02 [INFO] - Collecting all compensation voltages if applicable...
+2026-11-10 23:43:05 [INFO] - There are in total 1 compensation voltages: -34
+2026-11-10 23:43:05 [INFO] - Indexing proteins...
+2026-11-10 23:43:05 [INFO] - Indexing sequences...
+2026-11-10 23:43:05 [INFO] - Indexing peptides...
+2026-11-10 23:43:05 [INFO] - Indexing ions...
+2026-11-10 23:43:05 [ERROR] - There were errors creating indexes : java.lang.NullPointerException: Cannot find CV -50 from all indexed CVs: [-34]
+Process 'IonQuant' finished, exit code: 1
+Process returned non-zero exit code, stopping
+
+~~~~~~~~~~~~~~~~~~~~
+Cancelling 1 remaining tasks

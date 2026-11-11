@@ -1,0 +1,16 @@
+IonQuant 1.11.20 (FragPipe 24.0, MSFragger 4.4.1, Batmass-IO 1.36.6), LFQ-MBR, the three PXD045500 runs.
+
+Raw input, Linux (Ubuntu 24.04 container, Java 17.0.21), inside FragPipe's LFQ-MBR run:
+  [INFO] - Collecting all compensation voltages if applicable...
+  [INFO] - There are in total 1 compensation voltages: -34
+  [ERROR] - There were errors creating indexes : java.lang.NullPointerException: Cannot find CV -50 from all indexed CVs: [-34]
+  Process 'IonQuant' finished, exit code: 1
+
+Raw input, Windows 10 (Java 11.0.30, Thermo reader of MSFragger-4.4.1/ext/thermo), IonQuant run standalone on the
+psm.tsv files of the Linux run:
+  [INFO] - There are in total 1 compensation voltages: -34
+  [ERROR] - There were errors creating indexes : java.lang.NullPointerException: Cannot find CV -50 from all indexed CVs: [-34]
+
+mzML input with all scans (control, drop_cv_segment.py ... -999), Linux:
+  [INFO] - There are in total 1 compensation voltages: -34
+  [ERROR] - There were errors creating indexes : java.lang.NullPointerException: Cannot find CV -50 from all indexed CVs: [-34]
