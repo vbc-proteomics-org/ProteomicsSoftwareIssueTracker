@@ -37,7 +37,7 @@ Last updated: 2026-11-11.
 
 | # | Problem | Affected | Fixed in | Vendor | Silent |
 |---|---|---|---|---|---|
-| [#17](../../issues/17) | Takes a FAIMS run's leading CV segment as its only CV and fails ("Cannot find CV -50 from all indexed CVs: [-34]") | 1.11.20 (FragPipe 24.0) | – | not contacted (related: FragPipe#2369, closed) | no |
+| [#17](../../issues/17) | Takes a FAIMS run's leading CV segment as its only CV and fails ("Cannot find CV -50 from all indexed CVs: [-34]") | 1.11.20 (FragPipe 24.0) | – | reported 2026-11-11 ([FragPipe#2926](https://github.com/Nesvilab/FragPipe/issues/2926)) | no |
 
 ## MUSICA (ASC)
 
