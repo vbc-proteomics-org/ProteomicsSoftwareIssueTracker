@@ -20,6 +20,7 @@ Issue: [#17](../../../../issues/17)
 | `cv-census.txt` | Output of `count_cvs.py` for the three runs |
 | `actual.txt` | IonQuant log lines: raw input on Linux and Windows, mzML control |
 | `expected.txt` | IonQuant log and result with the leading segment removed |
+| `fragpipe-log-lfq-mbr.txt` | Full FragPipe 24.0 log of the failing LFQ-MBR run (Linux container; local paths replaced by `/work`) |
 
 ## How to reproduce
 
