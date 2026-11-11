@@ -4,6 +4,7 @@
   { "name": "software: Proteome Discoverer",  "color": "1d76db", "description": "Thermo Fisher Proteome Discoverer" },
   { "name": "software: apQuant",              "color": "1d76db", "description": "apQuant, VBC proteomics facilities" },
   { "name": "software: IonQuant",             "color": "1d76db", "description": "IonQuant (FragPipe), Nesvizhskii Lab" },
+  { "name": "software: MUSICA (ASC)",         "color": "1d76db", "description": "MUSICA HPC cluster, Austrian Scientific Computing" },
 
   { "name": "type: bug",                      "color": "d73a4a", "description": "Wrong behaviour or wrong output" },
   { "name": "type: compatibility",            "color": "e99695", "description": "Fails with a particular OS, instrument, file format or other software" },

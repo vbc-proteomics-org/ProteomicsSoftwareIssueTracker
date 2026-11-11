@@ -4,7 +4,7 @@ Every issue in this tracker, grouped by software. Maintained by hand; the linked
 authoritative where the two disagree. Columns: affected versions as tested, fix version if any, vendor
 status, and whether results change silently.
 
-Last updated: 2026-10-27.
+Last updated: 2026-11-11.
 
 ## Spectronaut
 
@@ -32,3 +32,16 @@ Last updated: 2026-10-27.
 | [#9](../../issues/9) | Per-file summary column "Area (median)" contains the mean area | 3.2.3 to 4.1.9 | – | own software | yes |
 | [#10](../../issues/10) | C13 overlap check has no effect: no feature is ever marked as overlapping | 3.2.1 to 4.1.9 | – | own software | yes |
 | [#11](../../issues/11) | Percolator scoring falls back to "sum" on a decimal-comma locale or when a score component is missing | 3.2.1 to 4.1.9 | – | own software | no |
+
+## IonQuant
+
+| # | Problem | Affected | Fixed in | Vendor | Silent |
+|---|---|---|---|---|---|
+| [#17](../../issues/17) | Takes a FAIMS run's leading CV segment as its only CV and fails ("Cannot find CV -50 from all indexed CVs: [-34]") | 1.11.20 (FragPipe 24.0) | – | not contacted (related: FragPipe#2369, closed) | no |
+
+## MUSICA (ASC)
+
+| # | Problem | Affected | Fixed in | Vendor | Silent |
+|---|---|---|---|---|---|
+| [#15](../../issues/15) | Comfort mode runs `--ntasks=1 --cpus-per-task=N` jobs on one core while accounting a share for N CPUs | Vienna, Slurm 25.11.8, 2026-11-11 | – | not contacted | yes |
+| [#16](../../issues/16) | Vanilla mode: any `--nodes` request books the whole node share, whatever the job's size | Vienna, Slurm 25.11.8, 2026-11-11 | – | not contacted | yes |
