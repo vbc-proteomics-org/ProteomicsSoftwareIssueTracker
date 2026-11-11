@@ -8,6 +8,12 @@ A problem belongs here when all three hold:
    write that is publicly available** (published, released or distributed to other labs), decided case
    by case. Software we write and use only internally does not belong here; its problems go to that
    software's own repository.
+
+   "Software" is meant in the widest sense: any **external tool or service** a proteomics workflow
+   depends on counts, not only installed programs. Examples: an HPC cluster and its scheduler
+   configuration, a public database or repository (UniProt, PRIDE), a vendor's licence or download
+   server. The same three conditions apply; such an entry gets a `software: …` label and folder like
+   any other.
 2. It is **relevant to running proteomics analyses**: it changes results, blocks a workflow, or costs
    real time to diagnose.
 3. It is **worth someone else knowing about** — another lab could plausibly hit it.

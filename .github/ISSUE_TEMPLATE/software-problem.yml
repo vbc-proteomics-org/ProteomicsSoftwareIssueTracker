@@ -1,5 +1,5 @@
 name: Software problem
-description: A problem in third-party or publicly available proteomics software (not internal-only VBC software)
+description: A problem in third-party or publicly available proteomics software, or in another external tool or service such as an HPC cluster (not internal-only VBC software)
 labels: ["vendor: not contacted", "needs triage"]
 body:
   - type: markdown
@@ -11,6 +11,7 @@ body:
     id: software
     attributes:
       label: Software
+      description: Software, tool or service (e.g. an HPC cluster), with the component if it helps.
       placeholder: Spectronaut
     validations:
       required: true

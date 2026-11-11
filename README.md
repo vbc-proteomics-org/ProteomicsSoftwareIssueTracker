@@ -2,6 +2,8 @@
 
 Known problems in **third-party proteomics software** — search engines, DIA/DDA analysis suites,
 instrument and vendor software — found by the VBC proteomics facilities in the course of real work.
+"Software" is meant broadly: other external tools and services proteomics work depends on, such as HPC
+clusters, are listed the same way (see [CONTRIBUTING.md](CONTRIBUTING.md#what-belongs-here)).
 Publicly available software the facilities write themselves can be listed too, case by case (see
 [CONTRIBUTING.md](CONTRIBUTING.md#what-belongs-here)).
 
@@ -31,6 +33,7 @@ change results without warning carry the label `impact: silent result change`.
 | Spectronaut | Biognosys | [open](../../issues?q=is%3Aissue+is%3Aopen+label%3A%22software%3A+Spectronaut%22) · [all](../../issues?q=is%3Aissue+label%3A%22software%3A+Spectronaut%22) | [spectronaut/](spectronaut/) |
 | DIA-NN | Vadim Demichev | [open](../../issues?q=is%3Aissue+is%3Aopen+label%3A%22software%3A+DIA-NN%22) · [all](../../issues?q=is%3Aissue+label%3A%22software%3A+DIA-NN%22) | [dia-nn/](dia-nn/) |
 | Proteome Discoverer | Thermo Fisher Scientific | [open](../../issues?q=is%3Aissue+is%3Aopen+label%3A%22software%3A+Proteome+Discoverer%22) · [all](../../issues?q=is%3Aissue+label%3A%22software%3A+Proteome+Discoverer%22) | [proteome-discoverer/](proteome-discoverer/) |
+| MUSICA (ASC HPC cluster) | Austrian Scientific Computing (ASC) | [open](../../issues?q=is%3Aissue+is%3Aopen+label%3A%22software%3A+MUSICA+%28ASC%29%22) · [all](../../issues?q=is%3Aissue+label%3A%22software%3A+MUSICA+%28ASC%29%22) | [musica/](musica/) |
 | apQuant | VBC proteomics facilities | [open](../../issues?q=is%3Aissue+is%3Aopen+label%3A%22software%3A+apQuant%22) · [all](../../issues?q=is%3Aissue+label%3A%22software%3A+apQuant%22) | [apquant/](apquant/) |
 
 [SUMMARY.md](SUMMARY.md) lists every issue across all software in one table.
