@@ -14,3 +14,4 @@ Contact details verified: 2026-11-11.
 
 | # | Folder | Problem |
 |---|---|---|
+| [#17](../../../issues/17) | [issue-17-faims-leading-cv-segment](issue-17-faims-leading-cv-segment/) | Takes a FAIMS run's leading CV segment as its only CV, fails with "Cannot find CV -50 from all indexed CVs: [-34]" |

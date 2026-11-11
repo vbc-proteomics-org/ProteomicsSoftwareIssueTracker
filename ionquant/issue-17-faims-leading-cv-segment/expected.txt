@@ -1,0 +1,12 @@
+The runs contain two compensation voltages (cv-census.txt): -34 in the first 217 MS1 scans (0.07-1.01 min, no MS2),
+-50 for all other MS1 scans and every MS2 scan. All PSMs are at CV -50. IonQuant should find CV -50 (alone, or
+together with -34) and quantify the PSMs.
+
+Removing only the leading CV -34 segment (drop_cv_segment.py ... -34), same psm.tsv files, same IonQuant:
+  [INFO] - There are in total 1 compensation voltages: -50
+  [INFO] - ..._rep1 has 1 compensation voltages: -50   (rep2, rep3 the same)
+  [INFO] - Done!
+  combined_protein.tsv: 944 proteins, combined_ion.tsv: 3712 ions
+
+For comparison, a non-FAIMS Orbitrap Astral HeLa run (not public) is quantified by the same IonQuant 1.11.20 on
+Windows and Linux without error.
