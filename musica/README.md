@@ -17,3 +17,5 @@ network behaviour, as seen by users. Problems in software that merely runs on MU
 
 | # | Folder | Problem |
 |---|---|---|
+| [#15](../../../issues/15) | [issue-15-allocation-vs-node-share](issue-15-allocation-vs-node-share/) | Comfort mode runs `--ntasks=1 --cpus-per-task=N` jobs on one core while accounting a share for N CPUs |
+| [#16](../../../issues/16) | [issue-15-allocation-vs-node-share](issue-15-allocation-vs-node-share/) | Vanilla mode: any `--nodes` request books the whole node share |
